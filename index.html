@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flamingo Medical & Wellness</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: "#2596be",
+            navy: "#071426",
+            soft: "#eaf8fb",
+            ivory: "#FBFFFE",
+          },
+          fontFamily: {
+            body: ["Inter", "sans-serif"],
+            display: ["Playfair Display", "serif"],
+          },
+          boxShadow: {
+            premium: "0 24px 70px rgba(7, 20, 38, 0.12)",
+            blue: "0 24px 60px rgba(37, 150, 190, 0.18)",
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1s ease, transform 5s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.35);
+  transition: 0.3s ease;
+}
+
+.hero-dot.active {
+  width: 38px;
+  background: #2596be;
+}
+    .sharp-card {
+      border-radius: 36px 36px 36px 10px;
+    }
+
+    .sharp-card-alt {
+      border-radius: 10px 36px 36px 36px;
+    }
+
+    .image-sharp {
+      border-radius: 46px 46px 46px 12px;
+    }
+
+    .image-sharp-alt {
+      border-radius: 12px 46px 46px 46px;
+    }
+
+    .btn-sharp {
+      border-radius: 999px 999px 999px 12px;
+      transition: 0.35s ease;
+    }
+
+    .btn-sharp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(37,150,190,0.28);
+    }
+
+    .wing-shape {
+      border-radius: 110px 16px 110px 16px;
+    }
+
+    .wing-dots span {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: #2596be;
+      border-radius: 999px;
+      opacity: 0.9;
+      box-shadow: 0 0 0 8px rgba(37, 150, 190, 0.08);
+    }
+
+    .wing-dots span:nth-child(1) { left: 52px; top: 270px; }
+    .wing-dots span:nth-child(2) { left: 78px; top: 218px; }
+    .wing-dots span:nth-child(3) { left: 122px; top: 176px; }
+    .wing-dots span:nth-child(4) { left: 182px; top: 150px; }
+    .wing-dots span:nth-child(5) { left: 252px; top: 142px; }
+
+    .wing-dots span:nth-child(6) { left: 72px; top: 342px; }
+    .wing-dots span:nth-child(7) { left: 122px; top: 382px; }
+    .wing-dots span:nth-child(8) { left: 188px; top: 405px; }
+    .wing-dots span:nth-child(9) { left: 260px; top: 408px; }
+    .wing-dots span:nth-child(10) { left: 332px; top: 388px; }
+
+    .wing-dots {
+      animation: wingDotsMove linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 80%;
+      transform-origin: center;
+    }
+
+    .scroll-portrait {
+      animation: portraitReveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 80%;
+    }
+
+
+    .hover\:shadow-blue:hover {
+        --tw-shadow: -1 24px 60px rgba(37, 150, 190, 0.18);
+        --tw-shadow-colored: 0 24px 60px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-shadow-color: #2596be2b !important;
+        --tw-shadow: var(--tw-shadow-colored);
+    }
+    @keyframes wingDotsMove {
+      from {
+        transform: translateX(-55px) rotate(-14deg) scale(0.82);
+        opacity: 0.15;
+      }
+      to {
+        transform: translateX(0) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes portraitReveal {
+      from {
+        transform: scale(0.72) translateY(45px) rotate(-8deg);
+        opacity: 0.25;
+      }
+      to {
+        transform: scale(1) translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @supports not (animation-timeline: view()) {
+      .wing-dots {
+        animation: wingFloat 7s ease-in-out infinite alternate;
+      }
+
+      .scroll-portrait {
+        opacity: 1;
+        transform: none;
+      }
+
+      @keyframes wingFloat {
+        from { transform: translateY(0) rotate(-4deg); }
+        to { transform: translateY(-18px) rotate(4deg); }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .wing-dots,
+      .scroll-portrait {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-ivory text-navy font-body overflow-x-hidden">
+
+  <!-- TOP BAR -->
+  <div class="">
+    <div class="max-w-7xl mx-auto px-5 flex justify-between gap-4">
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="absolute top-8 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="bg-white/95 backdrop-blur-xl shadow-premium sharp-card flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-16 h-16 bg-blue wing-shape flex items-center justify-center text-white">
+            <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-30-at-7.17.47-AM.jpeg" alt="">
+          </div>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-8 text-[13px] font-semibold text-navy">
+          <a class="hover:text-blue" href="#home">Home</a>
+          <div class="group relative">
+  <a class="hover:text-blue" href="#aesthetics">Aesthetics</a>
+  <div class="absolute hidden group-hover:block bg-white shadow-lg p-4 min-w-[220px]">
+    <a class="block hover:text-blue" href="#anti-wrinkle-treatments">Anti-Wrinkle Treatments</a>
+    <a class="block hover:text-blue" href="#dermal-fillers">Dermal Fillers</a>
+    <a class="block hover:text-blue" href="#hair-loss">Hair Loss</a>
+    <a class="block hover:text-blue" href="#weight-management">Weight Management</a>
+  </div>
+</div>
+
+<a class="hover:text-blue" href="#contact">Contact</a>
+
+<div class="group relative">
+  <a class="hover:text-blue" href="#ear-care">Ear Care</a>
+  <div class="absolute hidden group-hover:block bg-white shadow-lg p-4 min-w-[220px]">
+    <a class="block hover:text-blue" href="#ear-irrigation">Ear Irrigation</a>
+    <a class="block hover:text-blue" href="#micro-suction">Micro-suction</a>
+  </div>
+</div>
+
+<a class="hover:text-blue" href="#iv-therapy">IV Therapy</a>
+
+<a class="hover:text-blue" href="#our-story">Our Story</a>
+
+<div class="group relative">
+  <a class="hover:text-blue" href="#skin">Skin</a>
+  <div class="absolute hidden group-hover:block bg-white shadow-lg p-4 min-w-[220px]">
+    <a class="block hover:text-blue" href="#acne-treatments">Acne Treatments</a>
+    <a class="block hover:text-blue" href="#cryopen">CryoPen</a>
+    <a class="block hover:text-blue" href="#minor-skin-lesions">Minor Skin Lesions</a>
+  </div>
+</div>
+
+<a class="hover:text-blue" href="#travel-health">Travel Health</a>
+          </nav>
+
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-6 py-3 mx-3 text-sm font-bold">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+<section id="home" class="relative min-h-screen bg-navy overflow-hidden">
+
+  <!-- HERO SLIDER IMAGES -->
+  <div class="hero-slider absolute inset-0 z-0">
+    <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/05/hero-ear-suction.webp" class="hero-slide active" alt="Flamingo Ear Suction service">
+    <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/hero-02.jpg" class="hero-slide" alt="Flamingo Medical and Wellness skin care">
+    <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/hero-03.jpg" class="hero-slide" alt="Flamingo Medical and Wellness travel health">
+    <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/hero-4.webp" class="hero-slide" alt="Flamingo Medical and Wellness private clinic">
+    <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/hero-01.jpg" class="hero-slide" alt="Flamingo Medical and Wellness healthcare">
+  </div>
+
+  <!-- DARK READABILITY OVERLAY -->
+  <div class="absolute inset-0 z-[1] bg-gradient-to-r from-navy via-navy/70 to-transparent"></div>
+  <div class="absolute inset-0 z-[2] bg-black/10"></div>
+
+  <!-- HERO CONTENT -->
+  <div class="relative z-10 max-w-7xl mx-auto px-5 pt-36 pb-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+    <div>
+      <p class="text-blue uppercase tracking-[0.34em] text-xs font-bold mb-5">
+        CQC-Registered Private Clinic
+      </p>
+
+      <h1 class="font-display text-white text-5xl md:text-7xl leading-[1.02] mb-7">
+        Private Clinical Care. Delivered with precision.
+      </h1>
+
+      <p class="text-white/75 text-lg leading-8 max-w-xl mb-9">
+        Flamingo Medical & Wellness provides structured, evidence-based treatments within a discreet and professionally governed clinical setting.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+          Book Online
+        </a>
+        <a href="https://wa.me/447437346586" class="btn-sharp border border-white/30 text-white px-8 py-4 font-bold hover:border-blue">
+          WhatsApp Us
+        </a>
+      </div>
+
+      <!-- SLIDER DOTS -->
+      <div class="hero-dots flex gap-3 mt-10">
+        <button class="hero-dot active" data-slide="0"></button>
+        <button class="hero-dot" data-slide="1"></button>
+        <button class="hero-dot" data-slide="2"></button>
+        <button class="hero-dot" data-slide="3"></button>
+        <button class="hero-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+  <!-- TRUST STRIP -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-4 gap-6 border-b border-blue/10">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <p class="text-navy text-sm font-bold">Clinician-Led Decisions</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+          <i data-lucide="user-round-check" class="w-6 h-6"></i>
+        </div>
+        <p class="text-navy text-sm font-bold">Individual Attention</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+          <i data-lucide="plane" class="w-6 h-6"></i>
+        </div>
+        <p class="text-navy text-sm font-bold">Destination Risk Assessment</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+          <i data-lucide="leaf" class="w-6 h-6"></i>
+        </div>
+        <p class="text-navy text-sm font-bold">Evidence-Based Treatments</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section id="our-story" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="absolute -top-7 -left-7 w-44 h-44 bg-soft wing-shape"></div>
+        <div class="absolute -bottom-7 -right-7 w-32 h-32 bg-blue/10 wing-shape"></div>
+        <img
+          src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/05/about-us-img.webp"
+          class="relative image-sharp w-full object-cover shadow-premium"
+          alt=""
+        />
+        <div class="absolute z-30 bottom-20 right-4 bg-white sharp-card shadow-premium px-6 py-5">
+    <p class="text-navy font-bold">Sandy Thomas</p>
+    <p class="text-blue text-sm">Founder</p>
+  </div>
+      </div>
+        
+
+      <div>
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Our Story
+        </p>
+
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+          Considered care. Clinical standards. Individualised treatment.
+        </h2>
+
+        <p class="text-gray-600 leading-8 mb-5">
+          CQC-Registered Private Clinic led by an Advanced Nurse Practitioner & Independent Prescriber Led. Flamingo Medical & Wellness provides structured, evidence-based treatments within a discreet and professionally governed clinical setting.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="bg-ivory p-5 sharp-card border border-blue/10">
+            <i data-lucide="clipboard-check" class="w-7 h-7 text-blue mb-3"></i>
+            <h4 class="font-bold text-navy mb-2">Every Appointment Begins With Assessment</h4>
+            <p class="text-blue text-sm leading-6">Structured assessment before treatment recommendations.</p>
+          </div>
+          <div class="bg-ivory p-5 sharp-card-alt border border-blue/10">
+            <i data-lucide="badge-check" class="w-7 h-7 text-blue mb-3"></i>
+            <h4 class="font-bold text-navy mb-2">Clinically Led Decisions</h4>
+            <p class="text-blue text-sm leading-6">Evidence-based care within a governed clinical setting.</p>
+          </div>
+        </div>
+
+        <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold inline-flex">
+          Learn About Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DARK EDITORIAL -->
+  <section id="aesthetics" class="py-24 bg-ivory">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Signature Services
+        </p>
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+          Our aesthetic, skin and wellness treatments.
+        </h2>
+      </div>
+
+      <div class="space-y-6">
+ <!-- FEATURED MAIN SERVICE: EAR IRRIGATION -->
+<div class="relative overflow-hidden bg-white border border-blue/20 shadow-premium sharp-card">
+  <div class="grid lg:grid-cols-[0.9fr_1.2fr_0.75fr] items-stretch">
+
+    <!-- Image -->
+    <div class="relative h-[260px] lg:h-auto overflow-hidden">
+      <img
+        src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/05/ear-suiction.webp"
+        class="absolute inset-0 w-full h-full object-cover transition duration-700 hover:scale-105"
+        alt="Ear irrigation and microsuction service"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/40 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="p-8 md:p-10 flex flex-col justify-center">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-blue text-white text-[11px] uppercase tracking-widest font-bold px-4 py-2 rounded-full">
+           Ear Care
+        </span>
+      </div>
+
+      <h3 class="font-display text-navy text-3xl md:text-4xl leading-tight mb-4">
+        Ear Irrigation &<br class="hidden md:block">
+        Micro-suction Services
+      </h3>
+
+      <p class="text-gray-600 leading-7 max-w-2xl">
+        Performed by our experienced, qualified practitioner. Safe, professional ear wax removal with clinic appointments and home visits available.
+      </p>
+    </div>
+
+    <!-- CTA Panel -->
+    <div class="bg-navy p-8 md:p-10 flex flex-col justify-center">
+      <p class="text-blue text-xs uppercase tracking-widest font-bold mb-3">
+        Limited Offer
+      </p>
+
+      <p class="text-white/75 leading-7 text-sm mb-6">
+        Christmas and New Year vouchers available. Offer valid until 31st of January.
+      </p>
+
+      <div class="flex flex-col gap-3">
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-6 py-3 text-sm font-bold text-center">
+          Book Appointment
+        </a>
+
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp border border-white/25 text-white px-6 py-3 text-sm font-bold text-center">
+          Book a Home Visit
+        </a>
+
+        <a href="#" class="text-blue text-xs uppercase tracking-widest font-bold border-b border-blue pb-2 w-fit mt-2">
+          Buy Vouchers
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        <div class="grid md:grid-cols-2 bg-navy sharp-card overflow-hidden shadow-premium">
+          <div class="p-10 md:p-14 flex flex-col justify-center">
+            <div class="w-14 h-14 bg-blue/15 wing-shape flex items-center justify-center mb-6">
+              <i data-lucide="sparkles" class="w-7 h-7 text-blue"></i>
+            </div>
+            <p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-4">Aesthetics</p>
+            <h3 class="font-display text-white text-3xl md:text-4xl mb-5">Dermal Fillers & Anti-Wrinkle Treatments</h3>
+            <p class="text-white/70 leading-8 mb-8">
+              Clinician-led injectable treatments designed to refresh, restore definition and soften expression lines while keeping results natural.
+            </p>
+            <a href="#" class="text-blue uppercase tracking-widest text-xs font-bold border-b border-blue w-fit pb-2">
+              View Treatment
+            </a>
+          </div>
+          <div class="relative min-h-[370px] h-full overflow-hidden">
+            <img
+                src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/Dermal-Fillers-Anti-Wrinkle-Treatments.png"
+                class="absolute inset-0 w-full h-full object-cover transition duration-700 hover:scale-105"
+                alt=""
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 bg-navy sharp-card-alt overflow-hidden shadow-premium">
+          <div class="relative min-h-[370px] h-full overflow-hidden">
+            <img
+                src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/CryoPen-Skin-Lesion-Care.png"
+                class="absolute inset-0 w-full h-full object-cover transition duration-700 hover:scale-105"
+                alt=""
+            />
+          </div>
+          <div class="p-10 md:p-14 flex flex-col justify-center order-1 md:order-2">
+            <div class="w-14 h-14 bg-blue/15 wing-shape flex items-center justify-center mb-6">
+              <i data-lucide="syringe" class="w-7 h-7 text-blue"></i>
+            </div>
+            <p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-4">Skin</p>
+            <h3 class="font-display text-white text-3xl md:text-4xl mb-5">CryoPen & Skin Lesion Care</h3>
+            <p class="text-white/70 leading-8 mb-8">
+              Precision cryotherapy and minor skin lesion assessment for skin tags, warts, verrucas, milia, cherry angiomas, sun spots and benign lesions.
+            </p>
+            <a href="#" class="text-blue uppercase tracking-widest text-xs font-bold border-b border-blue w-fit pb-2">
+              View Service
+            </a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 bg-navy sharp-card overflow-hidden shadow-premium">
+          <div class="p-10 md:p-14 flex flex-col justify-center">
+            <div class="w-14 h-14 bg-blue/15 wing-shape flex items-center justify-center mb-6">
+              <i data-lucide="heart-pulse" class="w-7 h-7 text-blue"></i>
+            </div>
+            <p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-4">Weight Management</p>
+            <h3 class="font-display text-white text-3xl md:text-4xl mb-5">Weight-Management Pathway</h3>
+            <p class="text-white/70 leading-8 mb-8">
+              A clinician-led programme using Mounjaro where clinically appropriate, with consultation, personalised treatment planning and ongoing support.
+            </p>
+            <a href="#" class="text-blue uppercase tracking-widest text-xs font-bold border-b border-blue w-fit pb-2">
+              View Programme
+            </a>
+          </div>
+          <div class="relative min-h-[370px] h-full overflow-hidden">
+            <img
+                src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/Weight-Management-Pathway.png"
+                class="absolute inset-0 w-full h-full object-cover transition duration-700 hover:scale-105"
+                alt=""
+            />
+          </div>
+        </div>
+
+               
+
+      </div>
+    </div>
+  </section>
+<!-- AVAILABLE SERVICES -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+          What We Offer
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-2">
+        <div class="p-7 bg-ivory sharp-card border border-blue/10 hover:shadow-blue transition">
+          <i data-lucide="ear" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy font-bold text-xl mb-3">Ear Care Micro-suction</h3>
+          <p class="text-blue leading-7 text-sm">Safe ear wax removal using irrigation and micro-suction. Clinic and home visits available.</p>
+        </div>
+
+        <div class="p-7 bg-ivory sharp-card border border-blue/10 hover:shadow-blue transition">
+          <i data-lucide="syringe" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy font-bold text-xl mb-3">Travel Consultation</h3>
+          <p class="text-blue leading-7 text-sm">Hepatitis, typhoid, rabies, yellow fever, malaria advice and destination-specific planning.</p>
+        </div>
+
+        <div class="p-7 bg-ivory sharp-card-alt border border-blue/10 hover:shadow-blue transition">
+          <i data-lucide="sparkles" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy font-bold text-xl mb-3">Skin & Wellness</h3>
+          <p class="text-blue leading-7 text-sm">CryoPen, skin lesion assessment, acne treatment, milia, skin tags, cherry angiomas and pigmentation care.</p>
+        </div>
+
+        <div class="p-7 bg-ivory sharp-card border border-blue/10 hover:shadow-blue transition">
+          <i data-lucide="heart-pulse" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy font-bold text-xl mb-3">Weight Management</h3>
+          <p class="text-blue leading-7 text-sm">Mounjaro pathway with medical consultation, treatment planning, lifestyle guidance and monitoring.</p>
+        </div>
+
+        <div class="p-7 bg-ivory sharp-card-alt border border-blue/10 hover:shadow-blue transition">
+          <i data-lucide="stethoscope" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy font-bold text-xl mb-3">IV Therapy</h3>
+          <p class="text-blue leading-7 text-sm">IV therapy support can be added as a dedicated treatment pathway once the final service menu is confirmed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- WHY CHOOSE INTERACTIVE -->
+  <section class="relative bg-white py-28 overflow-hidden">
+    <div class="absolute top-20 left-0 w-72 h-72 bg-blue/8 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-blue/10 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-5 relative">
+      <div class="max-w-7xl mb-20 text-center">
+        <h2 class="font-display text-navy text-4xl md:text-6xl leading-[1.05] mb-6">
+          Why Choose Flamingo
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-[1fr_1.15fr] gap-16 items-center">
+        <div class="relative min-h-[620px] flex items-center justify-center">
+  <div class="group relative overflow-hidden image-sharp shadow-premium bg-transparent">
+  <img
+    src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/ourstory-e1777357997907.png"
+    class="w-full h-full object-cover duration-700 ease-out group-hover:scale-110"
+    alt=""
+  />
+</div>
+
+
+
+</div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="bg-navy sharp-card-alt p-8 shadow-premium mt-10">
+            <i data-lucide="shield-check" class="w-8 h-8 text-blue mb-8"></i>           
+            <h3 class="text-white text-2xl font-bold mt-5 mb-4">Medical-Led Confidence</h3>
+            <p class="text-white/70 leading-7">Every treatment begins with consultation, safe guidance, and clinical planning.</p>
+          </div>
+
+          <div class="bg-navy sharp-card-alt p-8 shadow-premium mt-10">
+            <i data-lucide="gem" class="w-8 h-8 text-blue mb-8"></i>
+            <h3 class="text-white text-2xl font-bold mt-5 mb-4">Premium Clinic Feel</h3>
+            <p class="text-white/70 leading-7">A refined environment that feels calm, private, and reassuring.</p>
+          </div>
+
+          <div class="bg-navy sharp-card-alt p-8 shadow-premium mt-10">
+            <i data-lucide="route" class="w-8 h-8 text-blue mb-8"></i>            
+            <h3 class="text-white text-2xl font-bold mt-5 mb-4">Tailored Patient Plans</h3>
+            <p class="text-white/70 leading-7">Skin, travel health, wellness, and lifestyle support built around your needs.</p>
+          </div>
+
+          <div class="bg-navy sharp-card-alt p-8 shadow-premium mt-10">
+            <i data-lucide="heart-handshake" class="w-8 h-8 text-blue mb-8"></i>            
+            <h3 class="text-white text-2xl font-bold mt-5 mb-4">Complete Wellness Care</h3>
+            <p class="text-white/70 leading-7">From aesthetics to travel protection, care connects back to health confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-24 bg-soft">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Patient Journey</p>
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+          A simple, structured process from booking to aftercare.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white sharp-card p-8 shadow-premium">
+          <lottie-player
+            src="https://assets6.lottiefiles.com/packages/lf20_u25cckyh.json"
+            background="transparent"
+            speed="1"
+            style="width: 130px; height: 130px;"
+            loop
+            autoplay>
+          </lottie-player>
+          <h3 class="text-navy text-2xl font-bold mb-3">Book Your Consultation</h3>
+          <p class="text-blue leading-7">Choose a convenient appointment time for travel health, skin, aesthetics, IV therapy or wellness.</p>
+        </div>
+
+        <div class="bg-navy sharp-card-alt p-8 shadow-premium md:mt-10">
+          <lottie-player
+            src="https://assets4.lottiefiles.com/packages/lf20_5njp3vgg.json"
+            background="transparent"
+            speed="1"
+            style="width: 130px; height: 130px;"
+            loop
+            autoplay>
+          </lottie-player>
+          <h3 class="text-white text-2xl font-bold mb-3">Personalised Assessment</h3>
+          <p class="text-white/70 leading-7">We review your needs, medical history, travel plans or treatment goals before recommending care.</p>
+        </div>
+
+        <div class="bg-white sharp-card p-8 shadow-premium">
+          <lottie-player
+            src="https://assets1.lottiefiles.com/packages/lf20_puciaact.json"
+            background="transparent"
+            speed="1"
+            style="width: 130px; height: 130px;"
+            loop
+            autoplay>
+          </lottie-player>
+          <h3 class="text-navy text-2xl font-bold mb-3">Treatment & Advice</h3>
+          <p class="text-blue leading-7">You receive only what is clinically appropriate, with clear aftercare and next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TRAVEL HEALTH -->
+  <section id="travel-health" class="py-24 bg-ivory">
+    <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Travel Health</p>
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+          Travel vaccination & risk assessment.
+        </h2>
+        <p class="text-gray-700 leading-8 mb-8">
+          Comprehensive destination-based risk assessment and immunisation delivered through a structured, clinician-led approach aligned with current Department of Health recommendations.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="bg-white p-5 sharp-card shadow-premium">
+            <i data-lucide="map" class="w-7 h-7 text-blue mb-3"></i>
+            <h4 class="font-bold text-navy mb-2">Destination-Based Review</h4>
+            <p class="text-blue text-sm leading-6">Personalised risk assessment based on destination, itinerary, duration and exposure.</p>
+          </div>
+
+          <div class="bg-white p-5 sharp-card-alt shadow-premium">
+            <i data-lucide="syringe" class="w-7 h-7 text-blue mb-3"></i>
+            <h4 class="font-bold text-navy mb-2">Vaccination Planning</h4>
+            <p class="text-blue text-sm leading-6">Clear advice on what you need, what you do not need, and malaria prevention where relevant.</p>
+          </div>
+        </div>
+
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+          Book Your Travel Consultation
+        </a>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -top-8 -right-8 w-40 h-40 bg-soft wing-shape"></div>
+        <img
+          src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/traveling-pic-e1777400309677.webp"
+          class="relative image-sharp-alt w-full h-[560px] object-cover shadow-premium"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+
+<!-- LOCATIONS / DESTINATION GUIDE -->
+<section class="py-24 bg-[#FBFFFE] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5">
+
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
+      <div class="max-w-3xl">
+        <p class="text-[#2596be] uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Destination Health Guide
+        </p>
+        <h2 class="font-display text-[#071426] text-4xl md:text-5xl leading-tight mb-5">
+          Travel health by destination.
+        </h2>
+        <p class="text-[#2596be] leading-8">
+          Your risk depends on how and where you travel, not just the country. We assess destination, itinerary, duration and exposure before recommending vaccines.
+        </p>
+      </div>
+
+      <a href="#" class="btn-sharp bg-[#2596be] text-white px-7 py-4 font-bold w-fit">
+        View All Destinations
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+
+      <!-- Featured Large Card -->
+      <a href="#" class="group relative lg:col-span-2 lg:row-span-2 h-[520px] overflow-hidden image-sharp shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=90"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          alt="Africa travel vaccination guide"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-[#071426] via-[#071426]/45 to-transparent"></div>
+
+        <div class="absolute top-8 left-8">
+          <span class="bg-[#2596be] text-white px-4 py-2 rounded-full text-xs font-bold">
+            Popular Guide
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 p-8">
+          <div class="w-14 h-14 bg-white/15 backdrop-blur-md wing-shape flex items-center justify-center text-[#2596be] mb-6">
+            <i data-lucide="globe-2" class="w-7 h-7"></i>
+          </div>
+
+          <h3 class="font-display text-white text-4xl mb-4">
+            Africa Travel Health Guide
+          </h3>
+
+          <p class="text-white/75 leading-7 max-w-xl mb-6">
+            Yellow fever may be required. Malaria risk is common. Hepatitis A, typhoid and meningitis may also apply depending on itinerary.
+          </p>
+
+          <span class="text-[#2596be] uppercase tracking-widest text-xs font-bold border-b border-[#2596be] pb-2">
+            Explore Guide
+          </span>
+        </div>
+      </a>
+
+      <!-- Small Card -->
+      <a href="#" class="group relative h-[250px] overflow-hidden sharp-card shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=700&q=90"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          alt="Australia travel health"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#071426]/90 to-transparent"></div>
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-white text-2xl font-bold mb-2">South Asia</h3>
+          <p class="text-white/70 text-sm">Higher risk of typhoid, hepatitis A, rabies and malaria.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group relative h-[250px] overflow-hidden sharp-card-alt shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=90"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          alt="Asia travel health"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#071426]/90 to-transparent"></div>
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-white text-2xl font-bold mb-2">Southeast Asia</h3>
+          <p class="text-white/70 text-sm">Hepatitis A, typhoid, rabies or Japanese encephalitis may apply.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group relative h-[250px] overflow-hidden sharp-card-alt shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=90"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          alt="Caribbean travel health"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#071426]/90 to-transparent"></div>
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-white text-2xl font-bold mb-2">Middle East</h3>
+          <p class="text-white/70 text-sm">Hepatitis A and Meningitis ACWY for Hajj and Umrah may apply.</p>
+        </div>
+      </a>
+
+      <a href="#" class="group relative h-[250px] overflow-hidden sharp-card shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=90"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          alt="Europe travel health"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#071426]/90 to-transparent"></div>
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-white text-2xl font-bold mb-2">Caribbean</h3>
+          <p class="text-white/70 text-sm">Lower overall risk, but still requires individual assessment.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- SKIN / CRYOPEN / LESION CARE -->
+  <section id="skin" class="py-24 bg-ivory">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-start">
+        <div class="sticky top-28">
+          <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Skin Clinic</p>
+          <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+            CryoPen, skin lesion assessment and clearer skin support.
+          </h2>
+          <p class="text-blue leading-8 mb-8">
+            Our skin pathway includes CryoPen precision cryotherapy, minor skin lesion assessment and acne treatments, with pricing guided by consultation and clinician assessment.
+          </p>
+          <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold inline-flex">Book Skin Consultation</a>
+        </div>
+
+        <div class="space-y-5">
+          <details class="bg-white p-7 sharp-card shadow-premium border border-blue/10" open>
+            <summary class="cursor-pointer text-navy text-2xl font-bold">CryoPen Precision Cryotherapy</summary>
+            <div class="mt-5 text-blue leading-8">
+              <p>CryoPen uses a fine jet of nitrous oxide to freeze and destroy unwanted benign skin lesions quickly and safely. It targets only the lesion, treats many concerns in seconds and minimises impact on surrounding skin.</p>
+              <div class="grid sm:grid-cols-2 gap-4 mt-5">
+                <div class="bg-ivory p-5 sharp-card"><strong class="text-navy">Treats:</strong><br>Skin tags, warts, verrucas, sun spots, cherry angiomas, milia, seborrhoeic keratosis and pigmented spots.</div>
+                <div class="bg-ivory p-5 sharp-card-alt"><strong class="text-navy">Benefits:</strong><br>Quick treatment, precision targeting, minimal discomfort, no downtime and natural healing.</div>
+              </div>
+            </div>
+          </details>
+
+          <details class="bg-white p-7 sharp-card-alt shadow-premium border border-blue/10">
+            <summary class="cursor-pointer text-navy text-2xl font-bold">Minor Skin Lesion Assessment & Removal</summary>
+            <div class="mt-5 text-blue leading-8">
+              <p>Pricing is based on the type, number and size of lesions, so a consultation is advised. Consultation fee is £50 and this is deducted from the final treatment cost if you proceed.</p>
+              <p class="mt-4">Skin lesion check by a consultant dermatologist: <strong class="text-navy">£150</strong>. Results are provided within 48 hours.</p>
+              <p class="mt-4">Treatment areas include lentigines, skin tags, milia, cherry angioma, freckles, actinic keratosis, seborrhoeic keratosis and sebaceous hyperplasia.</p>
+            </div>
+          </details>
+
+          <details class="bg-white p-7 sharp-card shadow-premium border border-blue/10">
+            <summary class="cursor-pointer text-navy text-2xl font-bold">Acne Treatments</summary>
+            <div class="mt-5 text-blue leading-8">
+              Treatments are tailored to calm breakouts, improve texture and support clearer skin long-term. We recommend the right plan after assessing your skin.
+              <p class="mt-4"><strong class="text-navy">Consultation required for pricing:</strong> £50. No consultation fee if you proceed with treatment.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- PATIENT CONCERNS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Patient Concerns</p>
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+          Care for common skin, wellness and travel needs.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="relative h-[470px] overflow-hidden image-sharp group shadow-premium">
+          <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/health-woman.png"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+          <div class="absolute bottom-0 p-8">
+            <i data-lucide="sparkles" class="w-8 h-8 text-blue mb-5"></i>
+            <h3 class="font-display text-white text-3xl mb-3">Skin Health</h3>
+            <p class="text-white/75 text-sm leading-6 mb-6">Support for texture, dullness, ageing signs, hydration, and natural glow.</p>
+            <a href="#" class="text-blue text-xs uppercase tracking-widest border-b border-blue pb-2 font-bold">Learn More</a>
+          </div>
+        </div>
+
+        <div class="relative h-[470px] overflow-hidden image-sharp-alt group shadow-premium md:mt-10">
+          <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/vacinated-man.png"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+          <div class="absolute bottom-0 p-8">
+            <i data-lucide="plane" class="w-8 h-8 text-blue mb-5"></i>
+            <h3 class="font-display text-white text-3xl mb-3">Travel Protection</h3>
+            <p class="text-white/75 text-sm leading-6 mb-6">Vaccinations, malaria advice, and destination-specific travel guidance.</p>
+            <a href="#" class="text-blue text-xs uppercase tracking-widest border-b border-blue pb-2 font-bold">Learn More</a>
+          </div>
+        </div>
+
+        <div class="relative h-[470px] overflow-hidden image-sharp group shadow-premium">
+          <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/wellnessgoals.png"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+          <div class="absolute bottom-0 p-8">
+            <i data-lucide="leaf" class="w-8 h-8 text-blue mb-5"></i>
+            <h3 class="font-display text-white text-3xl mb-3">Wellness Goals</h3>
+            <p class="text-white/75 text-sm leading-6 mb-6">Support for confidence, lifestyle changes, weight goals, and wellbeing.</p>
+            <a href="#" class="text-blue text-xs uppercase tracking-widest border-b border-blue pb-2 font-bold">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AESTHETIC TREATMENTS DETAIL -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="max-w-3xl mb-14">
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-5">
+          Aesthetics
+        </h2>
+        <p class="text-gray-700 leading-8">
+          We offer treatments designed to help you look refreshed and feel confident, with a personalised approach and medical-grade products.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="bg-ivory p-8 sharp-card shadow-premium">
+          <i data-lucide="sparkles" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy text-2xl font-bold mb-4">Dermal Fillers</h3>
+          <p class="text-blue leading-7 mb-5">Medical-grade hyaluronic acid fillers with lidocaine for comfort. Options include cheeks, lips, jawline, marionette lines and filler dissolving.</p>
+          <ul class="text-blue text-sm leading-7">
+            <li>Cheeks 1ml — £180 • 30 mins</li>
+            <li>Lips 0.5ml — £90 • 30 mins</li>
+            <li>Lips 1ml — £180 • 30 mins</li>
+            <li>Jaw 2ml — £240 • 25 mins</li>
+          </ul>
+        </div>
+
+        <div class="bg-navy p-8 sharp-card-alt shadow-premium">
+          <i data-lucide="badge-check" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-white text-2xl font-bold mb-4">Anti-Wrinkle Treatments</h3>
+          <p class="text-white/70 leading-7 mb-5">A natural, refreshed approach to expression lines without a frozen look.</p>
+          <ul class="text-white/70 text-sm leading-7">
+            <li>2 Areas — £190 • 20 mins</li>
+            <li>3 Areas — £210 • 30 mins</li>
+            <li>Brow Lift — £60</li>
+            <li>Masseters — £180</li>
+            <li>Hyperhidrosis — £450</li>
+          </ul>
+        </div>
+
+        <div class="bg-soft p-8 sharp-card shadow-premium">
+          <i data-lucide="activity" class="w-8 h-8 text-blue mb-6"></i>
+          <h3 class="text-navy text-2xl font-bold mb-4">Hair Loss</h3>
+          <p class="text-blue leading-7">Hair loss is highly individual and changes over time. Our clinician-led approach identifies the cause and creates a targeted plan.</p>
+          <p class="text-blue leading-7 mt-4">Options may include detailed assessment, PRP therapy, evidence-based medical options and bespoke treatment programmes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEIGHT MANAGEMENT / IV THERAPY -->
+  <section id="iv-therapy" class="py-24 bg-soft">
+    <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-10">
+      <div class="bg-white p-8 md:p-10 sharp-card shadow-premium">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Weight Management</p>
+        <h2 class="font-display text-navy text-4xl leading-tight mb-5">Mounjaro weight-management pathway.</h2>
+        <p class="text-blue leading-8 mb-5">Our clinician-led programme uses Mounjaro where appropriate to support safe, effective and sustainable weight loss.</p>
+        <ul class="text-blue leading-8 mb-5">
+          <li>✔ Full medical consultation</li>
+          <li>✔ Personalised treatment plan</li>
+          <li>✔ Ongoing clinical support</li>
+          <li>✔ Lifestyle and nutrition guidance</li>
+        </ul>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="bg-ivory p-4 sharp-card"><strong class="text-navy">2.5mg</strong><br><span class="text-blue">£200</span></div>
+          <div class="bg-ivory p-4 sharp-card"><strong class="text-navy">5mg</strong><br><span class="text-blue">£250</span></div>
+          <div class="bg-ivory p-4 sharp-card"><strong class="text-navy">7.5mg</strong><br><span class="text-blue">£320</span></div>
+        </div>
+      </div>
+
+      <div class="bg-navy p-8 md:p-10 sharp-card-alt shadow-premium">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">IV Therapy</p>
+        <h2 class="font-display text-white text-4xl leading-tight mb-5">IV Therapy</h2>
+        <p class="text-white/70 leading-8 mb-6">
+          IV Therapy has been added as a dedicated website tab. Final treatment names, benefits and pricing can be added once the client confirms the IV therapy menu.
+        </p>
+        <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold inline-flex">Ask About IV Therapy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPANDED TRAVEL CONSULTATION -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+        <div>
+          <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">Clinically Distinguished Travel Health</p>
+          <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">Most people plan flights before they plan their health.</h2>
+          <p class="text-blue leading-8 mb-8">Travelling can expose you to food and water-borne infections, mosquito-transmitted diseases and country-specific entry requirements.</p>
+          <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold inline-flex">Start Your Travel Consultation</a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="bg-ivory p-6 sharp-card shadow-premium"><h3 class="text-navy font-bold text-xl mb-3">Why Book Early?</h3><p class="text-blue leading-7">Full protection before departure, time for multi-dose vaccines and stress-free preparation.</p></div>
+          <div class="bg-ivory p-6 sharp-card-alt shadow-premium"><h3 class="text-navy font-bold text-xl mb-3">Who Should Book?</h3><p class="text-blue leading-7">Frequent travellers, backpackers, families, volunteers, aid workers and last-minute travellers.</p></div>
+          <div class="bg-ivory p-6 sharp-card-alt shadow-premium"><h3 class="text-navy font-bold text-xl mb-3">More Than Vaccines</h3><p class="text-blue leading-7">Malaria prevention, insect bite avoidance, food and water safety and advice if you become unwell.</p></div>
+          <div class="bg-navy p-6 sharp-card shadow-premium"><h3 class="text-white font-bold text-xl mb-3">No Unnecessary Vaccines</h3><p class="text-white/70 leading-7">Recommendations are targeted, evidence-based and guided by clinical judgement.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="py-24 bg-navy relative overflow-hidden">
+    <div class="absolute left-12 top-16 w-40 h-40 border border-blue/25 rounded-full"></div>
+    <div class="absolute right-16 bottom-12 w-52 h-52 bg-blue/10 wing-shape"></div>
+
+    <div class="max-w-4xl mx-auto px-5 text-center relative">
+      <i data-lucide="quote" class="w-12 h-12 text-blue mx-auto mb-8"></i>
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-5">
+        Patient Experience
+      </p>
+      <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-8">
+        “The care felt calm, professional and completely personal.”
+      </h2>
+      <p class="text-white/70 leading-8 max-w-2xl mx-auto mb-8">
+        From the consultation to aftercare, every step was explained clearly. The clinic felt premium,
+        but the advice felt practical, safe, and trustworthy.
+      </p>
+      <p class="text-blue font-bold">Patient Review</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-ivory">
+    <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="absolute -left-6 -bottom-6 w-44 h-44 bg-soft wing-shape"></div>
+        <img
+          src="http://flamingomedicalandwellness.com/wp-content/uploads/2026/04/faq.png"
+          class="relative image-sharp w-full h-[560px] object-cover shadow-premium"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">FAQ</p>
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-8">
+          Clear answers before you book.
+        </h2>
+
+        <div class="space-y-4">
+          <details class="bg-white p-6 sharp-card shadow-premium" open>
+            <summary class="cursor-pointer font-bold text-navy">Do I need travel vaccinations for my trip?</summary>
+            <p class="text-blue leading-7 mt-4">
+              Not always, and that is exactly why a consultation matters. Your destination, length of stay, activities, medical history and previous vaccines all affect what you need.
+            </p>
+          </details>
+
+          <details class="bg-white p-6 sharp-card-alt shadow-premium">
+            <summary class="cursor-pointer font-bold text-navy">How far in advance should I book a travel consultation?</summary>
+            <p class="text-blue leading-7 mt-4">
+              Ideally 6–8 weeks before travel. This allows time for vaccines to become fully effective and for multi-dose courses if required. Last-minute appointments may still help.
+            </p>
+          </details>
+
+          <details class="bg-white p-6 sharp-card shadow-premium">
+            <summary class="cursor-pointer font-bold text-navy">What happens during a travel consultation?</summary>
+            <p class="text-blue leading-7 mt-4">
+              We review your destination, itinerary, duration, type of travel, medical history and previous vaccinations, then provide clear guidance aligned with Department of Health recommendations.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="bg-navy sharp-card p-10 md:p-16 grid lg:grid-cols-2 gap-12 items-center overflow-hidden relative">
+        <div class="absolute right-0 top-0 w-72 h-72 bg-blue/10 wing-shape"></div>
+
+        <div class="relative">
+          <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+            Start Your Care Journey
+          </p>
+          <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+            Ready for structured, clinician-led private care?
+          </h2>
+          <p class="text-white/70 leading-8 mb-8">
+            Book online for travel health, skin, aesthetics, IV therapy or weight-management support. Every appointment begins with assessment.
+          </p>
+          <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+            Book Appointment
+          </a>
+        </div>
+
+        <div class="relative bg-white/5 sharp-card p-8 flex items-center justify-center">
+  <lord-icon
+    src="https://cdn.lordicon.com/abwrkdvl.json"
+    trigger="loop"
+    colors="primary:#2596be,secondary:#ffffff"
+    style="width:320px;height:320px">
+  </lord-icon>
+</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-navy text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 flex items-center justify-center">
+            <img src="http://flamingomedicalandwellness.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-30-at-7.17.47-AM.jpeg" alt="">
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-7">
+          Private medical, wellness, travel health, and aesthetic care in a premium clinic setting.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Services</h4>
+        <ul class="space-y-3 text-white/60 text-sm">
+          <li>Dermal Fillers & Anti-Wrinkle</li>
+          <li>Travel Vaccination & Risk Assessment</li>
+          <li>Weight Management Pathway</li>
+          <li>Skin & Wellness</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Clinic</h4>
+        <ul class="space-y-3 text-white/60 text-sm">
+          <li>About</li>
+          <li>Patient Reviews</li>
+          <li>FAQ</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Contact</h4>
+        <ul class="space-y-3 text-white/60 text-sm">
+          <li>Clayhill Medical Practice Southview Road Basildon Essex SS16 4HD</li>
+          <li>01268 288633</li>
+          <li>contact@flamingomedicalandwellness.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 mt-12 pt-6 border-t border-white/10 text-center text-white/45 text-sm">
+      © 2026 Flamingo Medical & Wellness. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    
+  const heroSlides = document.querySelectorAll(".hero-slide");
+  const heroDots = document.querySelectorAll(".hero-dot");
+  let currentHeroSlide = 0;
+
+  function showHeroSlide(index) {
+    heroSlides.forEach((slide) => slide.classList.remove("active"));
+    heroDots.forEach((dot) => dot.classList.remove("active"));
+
+    heroSlides[index].classList.add("active");
+    heroDots[index].classList.add("active");
+
+    currentHeroSlide = index;
+  }
+
+  heroDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showHeroSlide(Number(dot.dataset.slide));
+    });
+  });
+
+  setInterval(() => {
+    const nextSlide = (currentHeroSlide + 1) % heroSlides.length;
+    showHeroSlide(nextSlide);
+  }, 4500);
+</script>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ear Irrigation & Micro-suction | Flamingo Medical & Wellness</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blue: "#2596be",
+        navy: "#071426",
+        soft: "#eaf8fb",
+        ivory: "#FBFFFE",
+      },
+      fontFamily: {
+        body: ["Inter", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+      },
+      boxShadow: {
+        premium: "0 24px 70px rgba(7,20,38,0.12)",
+        blue: "0 24px 60px rgba(37,150,190,0.18)",
+      }
+    }
+  }
+};
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  background: #FBFFFE;
+  color: #071426;
+  font-family: Inter, sans-serif;
+}
+
+.sharp-card {
+  border-radius: 36px 36px 36px 10px;
+}
+
+.sharp-card-alt {
+  border-radius: 10px 36px 36px 36px;
+}
+
+.image-sharp {
+  border-radius: 46px 46px 46px 12px;
+}
+
+.image-sharp-alt {
+  border-radius: 12px 46px 46px 46px;
+}
+
+.btn-sharp {
+  border-radius: 999px 999px 999px 12px;
+  transition: 0.35s ease;
+}
+
+.btn-sharp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(37,150,190,0.28);
+}
+
+.wing-shape {
+  border-radius: 110px 16px 110px 16px;
+}
+
+.reveal,
+.reveal-card {
+  opacity: 0;
+  transform: translateY(38px);
+}
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform .8s ease, filter .8s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.06);
+  filter: contrast(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="absolute top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-5 py-6">
+    <div class="bg-white/95 backdrop-blur-xl shadow-premium sharp-card px-5 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue wing-shape flex items-center justify-center text-white">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="font-bold leading-none text-navy">Flamingo</p>
+          <p class="text-blue text-[11px] uppercase tracking-[0.24em] mt-1">Medical & Wellness</p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-navy">
+        <a class="hover:text-blue" href="#">Home</a>
+        <a class="hover:text-blue" href="#">Travel Health</a>
+        <a class="hover:text-blue" href="#">Skin</a>
+        <a class="hover:text-blue" href="#">IV Therapy</a>
+        <a class="hover:text-blue" href="#">Aesthetics</a>
+        <a class="text-blue" href="#">Ear Care</a>
+      </nav>
+
+      <a href="#" class="btn-sharp bg-blue text-white px-6 py-3 text-sm font-bold">
+        Book Online
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- SHORT SUBPAGE HERO -->
+<section class="relative min-h-[46vh] flex items-center justify-center text-center bg-navy overflow-hidden pt-36 pb-16">
+  <img src="./not-uploaded/ear-hero-bg.png" class="absolute inset-0 w-full h-full object-cover opacity-45" alt="Ear care clinic" />
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#071426]/68 via-[#071426]/76 to-[#071426]/92"></div>
+  <div class="absolute right-12 bottom-8 w-48 h-48 bg-blue/10 wing-shape rotate-12"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-5 reveal">
+    <p class="text-blue uppercase tracking-[0.34em] text-xs font-bold mb-5">
+      Ear Care Services
+    </p>
+
+    <h1 class="font-display text-white text-5xl md:text-6xl leading-[1.05] mb-6">
+      Ear Irrigation & Micro-suction Services
+    </h1>
+
+    <p class="text-white/75 text-lg leading-8 max-w-2xl mx-auto">
+      Performed by our experienced, qualified practitioner. Clinic appointments and home visit options available.
+    </p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-white border-b border-blue/10">
+  <div class="max-w-7xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="badge-check" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Qualified Practitioner</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="ear" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Ear Irrigation</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="scan-search" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Micro-suction</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="home" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Home Visits</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE OVERVIEW -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Professional Ear Wax Removal
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Simple, safe and professional ear care.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-5">
+        Our ear care treatments are designed to safely remove excess wax and improve ear comfort using professional techniques.
+      </p>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        Choose a clinic appointment or ask about home visit availability for selected ear care services.
+      </p>
+
+      <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+        Book Your Appointment
+      </a>
+    </div>
+
+    <div class="relative reveal-card">
+      <div class="absolute -top-6 -left-6 w-36 h-36 bg-soft wing-shape"></div>
+      <div class="image-hover relative image-sharp shadow-premium">
+        <img
+          src="./not-uploaded/Professional Ear Wax Removal.png"
+          class="w-full h-[500px] object-cover"
+          alt="Ear care consultation"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO SERVICES -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Treatment Options
+      </p>
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        Ear Irrigation and Micro-suction.
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+      <article class="reveal-card bg-white sharp-card shadow-premium border border-blue/10 overflow-hidden">
+        <div class="grid md:grid-cols-[0.9fr_1.1fr] h-full">
+          <div class="image-hover min-h-[300px]">
+            <img
+              src="./not-uploaded/Ear Irrigation.png"
+              class="w-full h-full object-cover"
+              alt="Ear irrigation"
+            />
+          </div>
+
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <i data-lucide="droplets" class="w-8 h-8 text-blue mb-6"></i>
+            <p class="text-blue uppercase tracking-widest text-xs font-bold mb-4">
+              Service 01
+            </p>
+            <h3 class="font-display text-navy text-4xl mb-4">
+              Ear Irrigation
+            </h3>
+            <p class="text-gray-500 leading-7 mb-7">
+              Gentle ear irrigation designed to safely flush excess wax and improve ear comfort.
+            </p>
+            <a href="#" class="text-blue uppercase tracking-widest text-xs font-bold border-b border-blue pb-2 w-fit">
+              Book Irrigation
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal-card bg-navy sharp-card-alt shadow-premium overflow-hidden text-white">
+        <div class="grid md:grid-cols-[1.1fr_0.9fr] h-full">
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <i data-lucide="scan-search" class="w-8 h-8 text-blue mb-6"></i>
+            <p class="text-blue uppercase tracking-widest text-xs font-bold mb-4">
+              Service 02
+            </p>
+            <h3 class="font-display text-white text-4xl mb-4">
+              Micro-suction
+            </h3>
+            <p class="text-white/70 leading-7 mb-7">
+              Precise ear wax removal using modern micro-suction techniques performed by an experienced practitioner.
+            </p>
+            <a href="#" class="text-blue uppercase tracking-widest text-xs font-bold border-b border-blue pb-2 w-fit">
+              Book Micro-suction
+            </a>
+          </div>
+
+          <div class="image-hover min-h-[300px]">
+            <img
+              src="./not-uploaded/Micro-suction.png"
+              class="w-full h-full object-cover"
+              alt="Micro-suction ear cleaning"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOME VISIT + SMALL OFFER -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-[1.35fr_0.65fr] gap-6 items-stretch">
+
+    <div class="reveal bg-soft sharp-card p-8 md:p-12 shadow-premium relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-56 h-56 bg-blue/10 wing-shape"></div>
+
+      <div class="relative grid md:grid-cols-[1fr_0.75fr] gap-10 items-center">
+        <div>
+          <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+            Home Visit Option
+          </p>
+
+          <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-5">
+            Book a Home Visit
+          </h2>
+
+          <p class="text-gray-500 leading-8 mb-8">
+            Prefer treatment in the comfort of your own home? Home visit appointments are available for selected ear care services.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+              Arrange Home Visit
+            </a>
+            <a href="#" class="btn-sharp border border-blue text-blue px-7 py-4 font-bold">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div class="image-hover hidden md:block image-sharp-alt">
+          <img
+            src="./not-uploaded/Book a Home Visit.png"
+            class="w-full h-[300px] object-cover"
+            alt="Home visit healthcare"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-card bg-navy text-white sharp-card-alt p-8 md:p-10 shadow-premium flex flex-col justify-center">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Seasonal Offer
+      </p>
+
+      <h3 class="font-display text-white text-3xl leading-tight mb-5">
+        Christmas and New Year Vouchers
+      </h3>
+
+      <p class="text-white/70 leading-7 mb-8">
+        Offer valid until 31st of January.
+      </p>
+
+      <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold w-fit">
+        Buy Vouchers
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-start">
+    <div class="reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        FAQ
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Clear answers before you book.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        Simple answers for patients considering ear irrigation or micro-suction.
+      </p>
+
+      <a href="#" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+        Book Appointment
+      </a>
+    </div>
+
+    <div class="reveal space-y-4">
+      <details class="bg-white p-6 sharp-card shadow-premium" open>
+        <summary class="cursor-pointer font-bold text-navy">What is ear micro-suction?</summary>
+        <p class="text-gray-500 leading-7 mt-4">
+          Micro-suction is a professional ear wax removal technique performed by an experienced practitioner.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 sharp-card-alt shadow-premium">
+        <summary class="cursor-pointer font-bold text-navy">Is ear irrigation painful?</summary>
+        <p class="text-gray-500 leading-7 mt-4">
+          Ear irrigation is designed to be gentle. Your practitioner will assess suitability before treatment.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 sharp-card shadow-premium">
+        <summary class="cursor-pointer font-bold text-navy">Do you offer home visits?</summary>
+        <p class="text-gray-500 leading-7 mt-4">
+          Yes. Home visit appointments are available for selected ear care services.
+        </p>
+      </details>
+
+      <details class="bg-white p-6 sharp-card-alt shadow-premium">
+        <summary class="cursor-pointer font-bold text-navy">How do I book?</summary>
+        <p class="text-gray-500 leading-7 mt-4">
+          You can book an appointment online or contact the clinic to arrange a home visit.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal bg-navy sharp-card p-10 md:p-14 text-center relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-72 h-72 bg-blue/10 wing-shape"></div>
+
+      <div class="relative max-w-3xl mx-auto">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Start Your Ear Care Journey
+        </p>
+
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+          Book your ear care appointment today.
+        </h2>
+
+        <p class="text-white/70 leading-8 mb-8">
+          Professional ear irrigation and micro-suction services in a calm clinical environment, with home visit options available.
+        </p>
+
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="#" class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+            Book Appointment
+          </a>
+          <a href="#" class="btn-sharp border border-white/30 text-white px-8 py-4 font-bold hover:border-blue">
+            Book Home Visit
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-11 h-11 bg-blue wing-shape flex items-center justify-center">
+          <i data-lucide="activity" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="font-bold">Flamingo</p>
+          <p class="text-blue text-[11px] uppercase tracking-[0.22em]">Medical & Wellness</p>
+        </div>
+      </div>
+      <p class="text-white/60 text-sm leading-7">
+        Private medical, wellness, travel health, ear care and aesthetic services in a premium clinic setting.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Services</h4>
+      <ul class="space-y-3 text-white/60 text-sm">
+        <li>Ear Care</li>
+        <li>Travel Vaccinations</li>
+        <li>Skin & CryoPen</li>
+        <li>IV Therapy</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Clinic</h4>
+      <ul class="space-y-3 text-white/60 text-sm">
+        <li>About</li>
+        <li>Patient Reviews</li>
+        <li>FAQ</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Contact</h4>
+      <ul class="space-y-3 text-white/60 text-sm">
+        <li>London, United Kingdom</li>
+        <li>020 0000 0000</li>
+        <li>hello@flamingoclinic.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 mt-12 pt-6 border-t border-white/10 text-center text-white/45 text-sm">
+    © 2026 Flamingo Medical & Wellness. All rights reserved.
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+if (window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".reveal").forEach((el) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .85,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 86%"
+      }
+    });
+  });
+
+  gsap.utils.toArray(".reveal-card").forEach((el, i) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .75,
+      delay: (i % 4) * .06,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%"
+      }
+    });
+  });
+}
+</script>
+
+</body>
+</html>

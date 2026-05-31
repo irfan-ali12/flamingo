@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Parts Sourcing | EB International</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --eb-black: #000000;
+      --eb-white: #ffffff;
+      --eb-blue: #72c8ff;
+      --eb-dark-blue: #061629;
+      --eb-muted: #f4f4f4;
+      --eb-text: #050505;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--eb-text);
+      background: #fff;
+    }
+
+    .eb-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    .hero-bg {
+      background-image:
+        linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.55) 42%, rgba(0,0,0,.12) 100%),
+        url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .eb-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--eb-blue);
+      color: var(--eb-blue);
+      border-radius: 999px;
+      padding: 13px 28px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      transition: .25s ease;
+    }
+
+    .eb-btn:hover {
+      background: var(--eb-blue);
+      color: #000;
+    }
+
+    .eb-btn-solid {
+      background: var(--eb-blue);
+      border-color: var(--eb-blue);
+      color: #000;
+    }
+
+    .eb-btn-solid:hover {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #6b7280;
+    }
+
+    .blue-icon {
+      color: var(--eb-blue);
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .line-card {
+      border: 1px solid #d8d8d8;
+    }
+
+    .dark-footer {
+      background: #000;
+      color: #fff;
+    }
+
+    @media(max-width: 768px) {
+      .eb-container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header: Main-site inspired -->
+  <header class="absolute top-0 left-0 w-full z-50 text-white">
+    <div class="eb-container h-[86px] flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="text-[24px] font-black uppercase tracking-wide">EASTBRIDGE</div>
+        <div class="text-[11px] font-serif mt-1">International</div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9 text-[12px] uppercase font-black tracking-wide">
+        <a href="#">Services</a>
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Insights</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-5">
+        <a href="#" class="hidden md:block text-[12px] font-black uppercase tracking-wide">
+          Let’s Build Your Product
+        </a>
+
+        <button class="w-[58px] h-[58px] bg-[var(--eb-blue)] flex flex-col justify-center items-center gap-[6px]">
+          <span class="w-8 h-[2px] bg-white"></span>
+          <span class="w-8 h-[2px] bg-white"></span>
+          <span class="w-8 h-[2px] bg-white"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero: Same content/layout as mockup, restyled -->
+  <section class="hero-bg min-h-[560px] flex items-end text-white">
+    <div class="eb-container w-full pb-20 pt-40">
+      <div class="max-w-[680px]">
+        <h1 class="text-[46px] md:text-[66px] font-black leading-[.95] tracking-tight uppercase">
+          Global Parts Sourcing<br />
+          for OEMs & Manufacturers
+        </h1>
+
+        <p class="mt-7 text-[18px] leading-relaxed max-w-[560px] text-white/85">
+          Reduce supplier complexity, lower production costs, and streamline international sourcing through our vetted global manufacturing network.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#contact" class="eb-btn eb-btn-solid">Request a Quote</a>
+          <a href="#contact" class="eb-btn">Speak With a Specialist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats strip: Same mockup position -->
+  <section class="bg-black text-white border-t border-white/15">
+    <div class="eb-container grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/20">
+      <div class="py-7 pr-6">
+        <div class="text-[28px] font-black">23+</div>
+        <p class="text-sm text-white/70">Years Experience</p>
+      </div>
+
+      <div class="py-7 px-6">
+        <div class="text-[28px] font-black">1,000+</div>
+        <p class="text-sm text-white/70">Qualified Suppliers</p>
+      </div>
+
+      <div class="py-7 px-6">
+        <div class="text-[28px] font-black">Global</div>
+        <p class="text-sm text-white/70">Manufacturing Network</p>
+      </div>
+
+      <div class="py-7 pl-6">
+        <div class="text-[28px] font-black">OEM & Industrial</div>
+        <p class="text-sm text-white/70">Focused</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Global Parts Sourcing -->
+  <section class="bg-white py-20">
+    <div class="eb-container">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="section-label mb-3">Global Parts Sourcing</div>
+
+          <h2 class="text-[38px] md:text-[46px] font-black uppercase leading-[.95] mb-6">
+            What Is Global Parts Sourcing?
+          </h2>
+
+          <p class="text-[16px] leading-relaxed mb-5 max-w-[560px]">
+            Global parts sourcing is the process of identifying, qualifying, and managing international suppliers to provide high-quality components and assemblies at the best total cost.
+          </p>
+
+          <p class="text-[16px] leading-relaxed mb-7 max-w-[560px]">
+            At EB International, we act as your extension in the global marketplace — reducing risk, controlling quality, and delivering results.
+          </p>
+
+          <a href="#" class="eb-btn">Learn More About Our Approach</a>
+        </div>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1300&q=85"
+            alt="Precision metal components"
+            class="w-full h-[310px] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services cards: same as mockup -->
+  <section class="bg-white pb-20">
+    <div class="eb-container">
+      <h2 class="text-center text-[34px] md:text-[42px] font-black uppercase leading-tight mb-10">
+        Global Manufacturing & Sourcing Services
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-6 gap-4">
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">🏭</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">Overseas Contract Manufacturing</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">End-to-end production management with qualified international manufacturing partners.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">🏛️</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">Chinese Manufacturing</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">Supplier sourcing, qualification, quality control, and production management across China.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">🌐</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">Asia Sourcing Agent</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">Regional sourcing support across China, Vietnam, Taiwan, India, and Southeast Asia.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">⚙️</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">OEM / Turnkey Manufacturing</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">Full-service manufacturing support from design through production and logistics.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">⬡</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">Custom Component Sourcing</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">Precision-machined parts, electronic components, molded parts, and custom assemblies.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+
+        <div class="line-card p-6 text-center">
+          <div class="blue-icon text-4xl mb-5">📈</div>
+          <h3 class="font-black uppercase text-[15px] leading-tight mb-4">Supply Chain Optimization</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600 mb-5">Vendor consolidation, procurement efficiency, and global sourcing strategy.</p>
+          <a href="#" class="text-[12px] font-black uppercase text-[var(--eb-blue)]">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process: same horizontal layout -->
+  <section class="bg-[#f3f5f7] py-16">
+    <div class="eb-container">
+      <h2 class="text-center text-[34px] md:text-[42px] font-black uppercase leading-tight mb-12">
+        Our Global Parts Sourcing Process
+      </h2>
+
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">1</div>
+          <div class="blue-icon text-4xl mb-4">📋</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Requirements Review</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">We analyze your specifications, volume, and delivery goals.</p>
+        </div>
+
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">2</div>
+          <div class="blue-icon text-4xl mb-4">👥</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Supplier Qualification</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">We identify and vet global suppliers for your needs.</p>
+        </div>
+
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">3</div>
+          <div class="blue-icon text-4xl mb-4">💵</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Prototype & Quoting</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">Samples, testing, and transparent pricing you can trust.</p>
+        </div>
+
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">4</div>
+          <div class="blue-icon text-4xl mb-4">🏭</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Production Management</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">We manage production schedules and vendor performance.</p>
+        </div>
+
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">5</div>
+          <div class="blue-icon text-4xl mb-4">🛡️</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Quality Assurance</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">Inspections and compliance with global quality standards.</p>
+        </div>
+
+        <div>
+          <div class="mx-auto w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-black mb-5">6</div>
+          <div class="blue-icon text-4xl mb-4">🚚</div>
+          <h3 class="font-black uppercase text-[13px] mb-3">Logistics & Delivery</h3>
+          <p class="text-[13px] leading-relaxed text-neutral-600">Coordinated shipping and on-time delivery worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries + Benefits: same row layout -->
+  <section class="bg-white py-20">
+    <div class="eb-container">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-[34px] md:text-[42px] font-black uppercase mb-9">
+            Industries We Support
+          </h2>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="blue-icon text-4xl mb-3">🚗</div>
+              <h3 class="text-[13px] font-black">Automotive</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">🏭</div>
+              <h3 class="text-[13px] font-black">Industrial Equipment</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">🩺</div>
+              <h3 class="text-[13px] font-black">Medical Devices</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">✈️</div>
+              <h3 class="text-[13px] font-black">Aerospace</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">📱</div>
+              <h3 class="text-[13px] font-black">Consumer Electronics</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">⚙️</div>
+              <h3 class="text-[13px] font-black">Energy</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">📡</div>
+              <h3 class="text-[13px] font-black">Telecommunications</h3>
+            </div>
+            <div>
+              <div class="blue-icon text-4xl mb-3">🤖</div>
+              <h3 class="text-[13px] font-black">Robotics & Automation</h3>
+            </div>
+          </div>
+
+          <a href="#" class="inline-flex mt-9 eb-btn">View All Industries</a>
+        </div>
+
+        <div>
+          <h2 class="text-[34px] md:text-[42px] font-black uppercase leading-tight mb-7">
+            Why Manufacturers Use EB for Global Parts Sourcing
+          </h2>
+
+          <img
+            src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1000&q=85"
+            alt="Manufacturing floor"
+            class="w-full h-[230px] object-cover mb-7"
+          />
+
+          <ul class="space-y-3 text-[15px]">
+            <li>✓ Reduce supplier management burden</li>
+            <li>✓ Access qualified global manufacturers</li>
+            <li>✓ Improve production scalability</li>
+            <li>✓ Lower total sourcing costs</li>
+            <li>✓ Reduce procurement delays</li>
+            <li>✓ Consolidate international vendors</li>
+            <li>✓ Improve quality oversight</li>
+            <li>✓ Streamline logistics coordination</li>
+          </ul>
+
+          <a href="#" class="inline-flex mt-8 eb-btn">Learn More About Our Benefits</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- International Solutions row: same as mockup -->
+  <section class="bg-white pb-20">
+    <div class="eb-container">
+      <div class="grid lg:grid-cols-[1.4fr_.8fr] gap-14 items-end">
+        <div>
+          <h2 class="text-[32px] md:text-[40px] font-black uppercase mb-5">
+            International Sourcing Solutions for OEM Manufacturing
+          </h2>
+
+          <p class="text-[15px] leading-relaxed mb-9 max-w-[900px]">
+            As a leading provider of global parts sourcing solutions, EB International helps OEMs and manufacturers build stronger products through smarter sourcing. Our global network of verified suppliers allows us to deliver high-quality components and assemblies at competitive prices — while reducing risk and improving supply chain performance.
+          </p>
+
+          <div class="grid md:grid-cols-4 gap-8">
+            <div>
+              <div class="blue-icon text-3xl mb-4">🌐</div>
+              <h3 class="font-black uppercase text-[14px] mb-2">Global Reach. Local Expertise.</h3>
+              <p class="text-[13px] text-neutral-600 leading-relaxed">Reliable manufacturers across Asia, North America, and Europe.</p>
+            </div>
+
+            <div>
+              <div class="blue-icon text-3xl mb-4">🛡️</div>
+              <h3 class="font-black uppercase text-[14px] mb-2">Quality & Compliance You Can Trust</h3>
+              <p class="text-[13px] text-neutral-600 leading-relaxed">Strict quality standards including ISO guidance and product certifications.</p>
+            </div>
+
+            <div>
+              <div class="blue-icon text-3xl mb-4">💰</div>
+              <h3 class="font-black uppercase text-[14px] mb-2">Cost Savings Without Compromise</h3>
+              <p class="text-[13px] text-neutral-600 leading-relaxed">Optimized materials, processes, and logistics to reduce total landed cost.</p>
+            </div>
+
+            <div>
+              <div class="blue-icon text-3xl mb-4">📦</div>
+              <h3 class="font-black uppercase text-[14px] mb-2">End-to-End Partnership</h3>
+              <p class="text-[13px] text-neutral-600 leading-relaxed">From initial RFQ to final delivery, we manage the entire sourcing process.</p>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=85"
+          alt="Cargo ship logistics"
+          class="w-full h-[300px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: same layout -->
+  <section class="bg-[#f3f5f7] py-16">
+    <div class="eb-container">
+      <h2 class="text-center text-[34px] md:text-[42px] font-black uppercase mb-10">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="grid lg:grid-cols-2 gap-5">
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            What is global parts sourcing?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            It is the process of finding, qualifying, and managing international suppliers for parts, components, and assemblies.
+          </p>
+        </details>
+
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            Which countries do you source from?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            EB supports sourcing across China, Taiwan, Vietnam, India, Mexico, and other global manufacturing regions.
+          </p>
+        </details>
+
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            How do you qualify overseas suppliers?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            We review certifications, capabilities, production history, sample quality, facility standards, and supplier communication.
+          </p>
+        </details>
+
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            How do you handle quality control?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            We support inspections, production checks, compliance reviews, sample validation, and ongoing supplier oversight.
+          </p>
+        </details>
+
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            Can you manage turnkey manufacturing projects?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            Yes. We can support sourcing, prototyping, quoting, production management, quality assurance, logistics, and delivery.
+          </p>
+        </details>
+
+        <details class="bg-white border border-neutral-300 px-6 py-5">
+          <summary class="flex justify-between cursor-pointer font-black text-[14px]">
+            Can you support custom assemblies?
+            <span>+</span>
+          </summary>
+          <p class="mt-4 text-[14px] leading-relaxed text-neutral-600">
+            Yes. EB supports custom components, subassemblies, molded parts, machined parts, electronic components, and finished assemblies.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section: same mockup position but main-site style -->
+  <section id="contact" class="bg-black text-white py-16">
+    <div class="eb-container">
+      <div class="grid lg:grid-cols-[.65fr_1.35fr] gap-12 items-start">
+        <div>
+          <div class="text-[12px] uppercase font-black text-white/50 mb-3">Start Your Project</div>
+          <h2 class="text-[38px] md:text-[50px] font-black uppercase leading-[.95] mb-5">
+            Let’s Simplify Your Global Parts Sourcing
+          </h2>
+          <p class="text-white/70 text-[15px] leading-relaxed mb-7">
+            Tell us about your project and one of our sourcing experts will respond quickly.
+          </p>
+
+          <p class="text-[15px] leading-relaxed">
+            +1.855.578.1816<br />
+            eb-intl.com
+          </p>
+        </div>
+
+        <form class="bg-white text-black p-8">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-[12px] font-black uppercase">First Name *</label>
+              <input type="text" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+            </div>
+
+            <div>
+              <label class="text-[12px] font-black uppercase">Last Name *</label>
+              <input type="text" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5 mt-5">
+            <div>
+              <label class="text-[12px] font-black uppercase">Email *</label>
+              <input type="email" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+            </div>
+
+            <div>
+              <label class="text-[12px] font-black uppercase">Company *</label>
+              <input type="text" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5 mt-5">
+            <div>
+              <label class="text-[12px] font-black uppercase">Phone *</label>
+              <input type="text" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+            </div>
+
+            <div>
+              <label class="text-[12px] font-black uppercase">Target Production Country</label>
+              <select class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+                <option>Select a country</option>
+                <option>China</option>
+                <option>Vietnam</option>
+                <option>Taiwan</option>
+                <option>India</option>
+                <option>Mexico</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-5 mt-5">
+            <div>
+              <label class="text-[12px] font-black uppercase">Product / Part Description *</label>
+              <textarea rows="4" class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black"></textarea>
+            </div>
+
+            <div>
+              <label class="text-[12px] font-black uppercase">Estimated Annual Volume</label>
+              <select class="mt-2 w-full border border-neutral-300 px-4 py-3 outline-none focus:border-black">
+                <option>Select volume</option>
+                <option>Prototype</option>
+                <option>Low Volume</option>
+                <option>Mid Volume</option>
+                <option>High Volume</option>
+              </select>
+
+              <label class="block text-[12px] font-black uppercase mt-5">Upload Files</label>
+              <input type="file" class="mt-2 w-full text-[13px]">
+            </div>
+          </div>
+
+          <button type="submit" class="mt-6 bg-[var(--eb-blue)] text-black px-10 py-4 text-[12px] font-black uppercase">
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: main-site inspired -->
+  <footer class="bg-white text-black py-14">
+    <div class="eb-container">
+      <div class="mb-12">
+        <div class="flex items-center gap-2">
+          <div class="text-[26px] font-black uppercase">EASTBRIDGE</div>
+          <div class="text-[12px] font-serif">International</div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-12">
+        <div>
+          <h4 class="text-[13px] font-black uppercase mb-4">Contact Us At Our Global Headquarters</h4>
+          <p class="text-[13px] leading-relaxed">
+            258 Harvard Street, #331<br>
+            Brookline, MA 02446, USA
+          </p>
+          <p class="text-[13px] mt-4">
+            contact@eb-intl.com<br>
+            +1.855.578.1816
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-[13px] font-black uppercase mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-[13px]">
+            <li>Services</li>
+            <li>Industries</li>
+            <li>Resources</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[13px] font-black uppercase mb-4">Our Services</h4>
+          <ul class="space-y-2 text-[13px]">
+            <li>Overseas Contract Manufacturing</li>
+            <li>Chinese Manufacturing</li>
+            <li>Asia Sourcing Agent</li>
+            <li>OEM / Turnkey Manufacturing</li>
+            <li>Custom Component Sourcing</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[13px] font-black uppercase mb-4">Let’s Build Something Together</h4>
+          <a href="#" class="eb-btn">Share Your File</a>
+        </div>
+      </div>
+
+      <div class="border-t border-neutral-200 mt-12 pt-8 flex flex-col md:flex-row justify-between text-[12px] gap-4">
+        <p>© 2026 EastBridge International. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

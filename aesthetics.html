@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aesthetic & Wellness Treatments | Flamingo Medical & Wellness</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blue: "#2596be",
+        navy: "#071426",
+        soft: "#eaf8fb",
+        ivory: "#FBFFFE"
+      },
+      fontFamily: {
+        body: ["Inter", "sans-serif"],
+        display: ["Playfair Display", "serif"]
+      },
+      boxShadow: {
+        premium: "0 24px 70px rgba(7,20,38,0.12)"
+      }
+    }
+  }
+};
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+body { background:#FBFFFE; color:#071426; font-family:Inter,sans-serif; }
+
+.sharp-card { border-radius:36px 36px 36px 10px; }
+.sharp-card-alt { border-radius:10px 36px 36px 36px; }
+.image-sharp { border-radius:46px 46px 46px 12px; }
+.wing-shape { border-radius:110px 16px 110px 16px; }
+
+.btn-sharp {
+  border-radius:999px 999px 999px 12px;
+  transition:.35s ease;
+}
+
+.btn-sharp:hover {
+  transform:translateY(-3px);
+  box-shadow:0 18px 42px rgba(37,150,190,.28);
+}
+
+.reveal,
+.reveal-card {
+  opacity:0;
+  transform:translateY(38px);
+}
+
+.image-hover { overflow:hidden; }
+.image-hover img { transition:transform .8s ease, filter .8s ease; }
+.image-hover:hover img { transform:scale(1.06); filter:contrast(1.05); }
+</style>
+</head>
+
+<body>
+
+<header class="absolute top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-5 py-6">
+    <div class="bg-white/95 backdrop-blur-xl shadow-premium sharp-card px-5 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue wing-shape flex items-center justify-center text-white">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="font-bold leading-none text-navy">Flamingo</p>
+          <p class="text-blue text-[11px] uppercase tracking-[0.24em] mt-1">Medical & Wellness</p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-navy">
+        <a class="hover:text-blue" href="#">Home</a>
+        <a class="hover:text-blue" href="#">Travel Health</a>
+        <a class="hover:text-blue" href="#">Skin</a>
+        <a class="hover:text-blue" href="#">IV Therapy</a>
+        <a class="text-blue" href="#">Aesthetics</a>
+        <a class="hover:text-blue" href="#">Ear Care</a>
+      </nav>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-6 py-3 text-sm font-bold">
+        Book Online
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[56vh] flex items-center justify-center text-center bg-navy overflow-hidden pt-36 pb-20">
+  <img
+    src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1600&q=90"
+    class="absolute inset-0 w-full h-full object-cover opacity-42"
+    alt="Aesthetic treatments clinic"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#071426]/70 via-[#071426]/82 to-[#071426]/96"></div>
+  <div class="absolute right-12 bottom-8 w-56 h-56 bg-blue/10 wing-shape rotate-12"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-5 reveal">
+    <p class="text-blue uppercase tracking-[0.34em] text-xs font-bold mb-5">
+      Aesthetic & Wellness Treatments
+    </p>
+
+    <h1 class="font-display text-white text-5xl md:text-6xl leading-[1.05] mb-6">
+      Safe, Clinician-Led Treatments
+    </h1>
+
+    <p class="text-white/75 text-lg leading-8 max-w-2xl mx-auto">
+      Treatments designed to help you look refreshed and feel confident — with natural results and a personalised approach.
+    </p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-white border-b border-blue/10">
+  <div class="max-w-7xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="shield-check" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">CQC Registered Clinic</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Clinician-Led</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="sparkles" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Natural Results</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Consultation First</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Our Aesthetic & Wellness Treatments
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Natural-looking results with a personalised clinical approach.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-5">
+        At Flamingo Medical & Wellness, we offer safe, clinician-led treatments designed to help you look refreshed and feel confident with natural results and a personalised approach.
+      </p>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        Your first appointment starts with a full consultation. We’ll discuss your concerns, assess the area, explain your options, and answer all questions before proceeding.
+      </p>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+        Book Consultation
+      </a>
+    </div>
+
+    <div class="relative reveal-card">
+      <div class="absolute -top-6 -left-6 w-36 h-36 bg-soft wing-shape"></div>
+      <div class="image-hover relative image-sharp shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=950&q=90"
+          class="w-full h-[500px] object-cover"
+          alt="Aesthetic consultation"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENT NAV -->
+<section class="py-14 bg-white border-y border-blue/10">
+  <div class="max-w-7xl mx-auto px-5 flex flex-wrap justify-center gap-3">
+    <a href="#fillers" class="btn-sharp bg-soft text-navy px-5 py-3 text-sm font-bold">Dermal Fillers</a>
+    <a href="#antiwrinkle" class="btn-sharp bg-soft text-navy px-5 py-3 text-sm font-bold">Anti-Wrinkle</a>
+    <a href="#skinboosters" class="btn-sharp bg-soft text-navy px-5 py-3 text-sm font-bold">Skin Boosters</a>
+    <a href="#advanced" class="btn-sharp bg-soft text-navy px-5 py-3 text-sm font-bold">Advanced</a>
+    <a href="#wellness" class="btn-sharp bg-soft text-navy px-5 py-3 text-sm font-bold">Wellness</a>
+  </div>
+</section>
+
+<!-- DERMAL FILLERS -->
+<section id="fillers" class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
+      <div class="reveal sticky top-28">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Dermal Fillers
+        </p>
+
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+          Volume, shape and definition.
+        </h2>
+
+        <p class="text-gray-500 leading-8 mb-6">
+          Dermal fillers add volume, shape and definition to areas of the face where it’s needed. We use medical-grade hyaluronic acid fillers with lidocaine for comfort.
+        </p>
+
+        <p class="text-gray-500 leading-8 mb-8">
+          Results are tailored to your features so the outcome remains balanced and natural.
+        </p>
+
+        <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+          Book Filler Consultation
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="reveal-card bg-white sharp-card shadow-premium p-6">
+          <h3 class="font-bold text-navy mb-2">Cheeks – 1ml</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£180.00</p>
+          <p class="text-gray-500 text-sm">30 mins</p>
+        </div>
+
+        <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6">
+          <h3 class="font-bold text-navy mb-2">Dermal Filler Dissolving</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£100.00</p>
+          <p class="text-gray-500 text-sm">45 mins</p>
+        </div>
+
+        <div class="reveal-card bg-white sharp-card shadow-premium p-6">
+          <h3 class="font-bold text-navy mb-2">Jaw – 2ml</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£240.00</p>
+          <p class="text-gray-500 text-sm">25 mins</p>
+        </div>
+
+        <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6">
+          <h3 class="font-bold text-navy mb-2">Lips – 0.5ml</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£90.00</p>
+          <p class="text-gray-500 text-sm">30 mins</p>
+        </div>
+
+        <div class="reveal-card bg-white sharp-card shadow-premium p-6">
+          <h3 class="font-bold text-navy mb-2">Lips – 1ml</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£180.00</p>
+          <p class="text-gray-500 text-sm">30 mins</p>
+        </div>
+
+        <div class="reveal-card bg-navy text-white sharp-card-alt shadow-premium p-6">
+          <h3 class="font-bold text-white mb-2">Marionette Lines – 1ml</h3>
+          <p class="text-blue font-bold text-2xl mb-2">£180.00</p>
+          <p class="text-white/70 text-sm">25 mins</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTI-WRINKLE -->
+<section id="antiwrinkle" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Anti-Wrinkle Treatments
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        A natural refresh, not a frozen look.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mt-5">
+        Anti-wrinkle injections soften expression lines by relaxing overactive muscles. Our style is natural and refreshed, not “frozen”.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Anti-Wrinkle Treatment – 2 Areas</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£190.00</p>
+        <p class="text-gray-500 text-sm">20 mins</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Anti-Wrinkle Treatment – 3 Areas</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£210.00</p>
+        <p class="text-gray-500 text-sm">30 mins</p>
+      </div>
+
+      <div class="reveal-card bg-navy text-white sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-white mb-2">Excess Sweating / Hyperhidrosis</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£450.00</p>
+        <p class="text-white/70 text-sm">30 mins</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Brow Lift</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">20 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Bunny Lines</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">20 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Chin Dimpling</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">20 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Downturned Mouth</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">20 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Lip Flip</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">30 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Masseters</h3><p class="text-blue font-bold text-2xl mb-2">£180.00</p><p class="text-gray-500 text-sm">30 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Migraines</h3><p class="text-blue font-bold text-2xl mb-2">£250.00</p><p class="text-gray-500 text-sm">30 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Neck Bands / Nefertiti Lift</h3><p class="text-blue font-bold text-2xl mb-2">£200.00</p><p class="text-gray-500 text-sm">30 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Nose Slimming</h3><p class="text-blue font-bold text-2xl mb-2">£80.00</p><p class="text-gray-500 text-sm">20 mins</p></div>
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Vertical Lip Lines</h3><p class="text-blue font-bold text-2xl mb-2">£60.00</p><p class="text-gray-500 text-sm">30 mins</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKIN BOOSTERS -->
+<section id="skinboosters" class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Skin Boosters
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        Improve hydration, glow and elasticity.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mt-5">
+        Skin boosters are ideal for dull, crepey or tired-looking skin.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal-card bg-white sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Eye Booster</h3><p class="text-blue font-bold text-2xl mb-2">£180.00</p><p class="text-gray-500 text-sm">45 mins</p></div>
+      <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">NMN Booster</h3><p class="text-blue font-bold text-2xl mb-2">£245.00</p><p class="text-gray-500 text-sm">45 mins</p></div>
+      <div class="reveal-card bg-white sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Placenta Booster</h3><p class="text-blue font-bold text-2xl mb-2">£180.00</p><p class="text-gray-500 text-sm">45 mins</p></div>
+      <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Polynucleotides</h3><p class="text-blue font-bold text-2xl mb-2">£180.00</p><p class="text-gray-500 text-sm">40 mins</p></div>
+      <div class="reveal-card bg-white sharp-card shadow-premium p-6"><h3 class="font-bold text-navy mb-2">Profhilo</h3><p class="text-blue font-bold text-2xl mb-2">£210.00</p><p class="text-gray-500 text-sm">45 mins</p></div>
+      <div class="reveal-card bg-navy text-white sharp-card-alt shadow-premium p-6"><h3 class="font-bold text-white mb-2">Triple Booster</h3><p class="text-blue font-bold text-2xl mb-2">£245.00</p><p class="text-white/70 text-sm">45 mins</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANCED -->
+<section id="advanced" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Advanced Treatments
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        Skin, hair and contouring options.
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-8">
+        <i data-lucide="activity" class="w-8 h-8 text-blue mb-6"></i>
+        <h3 class="font-display text-navy text-3xl mb-4">PRP Therapy</h3>
+        <p class="text-gray-500 leading-7 mb-5">
+          PRP uses a small sample of your blood to create a concentrated plasma rich in growth factors. It is popular for skin rejuvenation, acne scarring support and hair thinning support.
+        </p>
+        <p class="text-gray-500 leading-7">No joint injections are included.</p>
+      </div>
+
+      <div class="reveal-card bg-navy text-white sharp-card-alt shadow-premium p-8">
+        <i data-lucide="leaf" class="w-8 h-8 text-blue mb-6"></i>
+        <h3 class="font-display text-white text-3xl mb-4">Chemical Peel</h3>
+        <p class="text-white/70 leading-7 mb-5">
+          Medical-grade skin treatment designed to improve skin texture, tone and clarity.
+        </p>
+        <p class="text-blue font-bold text-2xl mb-2">£185</p>
+        <p class="text-white/70 text-sm">Per peel. Consultation required prior to treatment.</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-8">
+        <i data-lucide="target" class="w-8 h-8 text-blue mb-6"></i>
+        <h3 class="font-display text-navy text-3xl mb-4">Fat Dissolving</h3>
+        <p class="text-gray-500 leading-7 mb-5">Lemon Bottle fat dissolving injections.</p>
+        <p class="text-blue font-bold">Large Area – £200.00 • 40 mins</p>
+        <p class="text-blue font-bold mt-2">Small Area – £75.00 • 30 mins</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELLNESS -->
+<section id="wellness" class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div class="reveal bg-white sharp-card p-8 md:p-12 shadow-premium">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Weight Loss Treatments
+        </p>
+
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+          Clinician-led weight management.
+        </h2>
+
+        <p class="text-gray-500 leading-8 mb-8">
+          Clinician-led weight management programmes designed to support healthy, sustainable results.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-ivory sharp-card p-5"><h3 class="font-bold text-navy">Mounjaro 2.5mg</h3><p class="text-blue font-bold text-2xl mt-2">£200</p></div>
+          <div class="bg-ivory sharp-card-alt p-5"><h3 class="font-bold text-navy">Mounjaro 5mg</h3><p class="text-blue font-bold text-2xl mt-2">£250</p></div>
+          <div class="bg-navy text-white sharp-card p-5"><h3 class="font-bold">Mounjaro 7.5mg</h3><p class="text-blue font-bold text-2xl mt-2">£320</p></div>
+        </div>
+      </div>
+
+      <div class="reveal-card bg-navy text-white sharp-card-alt p-8 md:p-12 shadow-premium">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Acne & Hair Loss
+        </p>
+
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+          Support for skin and hair concerns.
+        </h2>
+
+        <p class="text-white/70 leading-8 mb-5">
+          Acne treatments are tailored to calm breakouts, improve texture and support clearer skin long-term.
+        </p>
+
+        <p class="text-white/70 leading-8">
+          Hair loss treatments include clinician-led options including PRP and medical therapies to support healthier, thicker hair.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal bg-navy sharp-card p-10 md:p-14 text-center relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-72 h-72 bg-blue/10 wing-shape"></div>
+
+      <div class="relative max-w-3xl mx-auto">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Book Your Consultation
+        </p>
+
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+          Start with a professional assessment.
+        </h2>
+
+        <p class="text-white/70 leading-8 mb-8">
+          We’ll discuss your concerns, assess the treatment area, explain your options, and only proceed when you feel fully informed and comfortable.
+        </p>
+
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+            Book Consultation
+          </a>
+          <a href="https://wa.me/447437346586" class="btn-sharp border border-white/30 text-white px-8 py-4 font-bold hover:border-blue">
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+lucide.createIcons();
+
+if (window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".reveal").forEach((el) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .85,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 86%"
+      }
+    });
+  });
+
+  gsap.utils.toArray(".reveal-card").forEach((el, i) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .75,
+      delay: (i % 4) * .06,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%"
+      }
+    });
+  });
+}
+</script>
+
+</body>
+</html>

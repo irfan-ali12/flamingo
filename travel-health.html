@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travel Health & Vaccinations | Flamingo Medical & Wellness</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blue: "#2596be",
+        navy: "#071426",
+        soft: "#eaf8fb",
+        ivory: "#FBFFFE"
+      },
+      fontFamily: {
+        body: ["Inter", "sans-serif"],
+        display: ["Playfair Display", "serif"]
+      },
+      boxShadow: {
+        premium: "0 24px 70px rgba(7,20,38,0.12)"
+      }
+    }
+  }
+};
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+body { background:#FBFFFE; color:#071426; font-family:Inter,sans-serif; }
+
+.sharp-card { border-radius:36px 36px 36px 10px; }
+.sharp-card-alt { border-radius:10px 36px 36px 36px; }
+.image-sharp { border-radius:46px 46px 46px 12px; }
+.image-sharp-alt { border-radius:12px 46px 46px 46px; }
+.wing-shape { border-radius:110px 16px 110px 16px; }
+
+.btn-sharp {
+  border-radius:999px 999px 999px 12px;
+  transition:.35s ease;
+}
+
+.btn-sharp:hover {
+  transform:translateY(-3px);
+  box-shadow:0 18px 42px rgba(37,150,190,.28);
+}
+
+.reveal,
+.reveal-card {
+  opacity:0;
+  transform:translateY(38px);
+}
+
+.image-hover { overflow:hidden; }
+
+.image-hover img {
+  transition:transform .8s ease, filter .8s ease;
+}
+
+.image-hover:hover img {
+  transform:scale(1.06);
+  filter:contrast(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="absolute top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-5 py-6">
+    <div class="bg-white/95 backdrop-blur-xl shadow-premium sharp-card px-5 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue wing-shape flex items-center justify-center text-white">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="font-bold leading-none text-navy">Flamingo</p>
+          <p class="text-blue text-[11px] uppercase tracking-[0.24em] mt-1">Medical & Wellness</p>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-navy">
+        <a class="hover:text-blue" href="#">Home</a>
+        <a class="text-blue" href="#">Travel Health</a>
+        <a class="hover:text-blue" href="#">Skin</a>
+        <a class="hover:text-blue" href="#">IV Therapy</a>
+        <a class="hover:text-blue" href="#">Aesthetics</a>
+        <a class="hover:text-blue" href="#">Ear Care</a>
+      </nav>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-6 py-3 text-sm font-bold">
+        Book Online
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- SHORT INNER HERO — SAME STYLE AS EAR CARE -->
+<section class="relative min-h-[56vh] flex items-center justify-center text-center bg-navy overflow-hidden pt-36 pb-20">
+  <img
+    src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1600&q=90"
+    class="absolute inset-0 w-full h-full object-cover opacity-42"
+    alt="Travel health clinic"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-b from-[#071426]/70 via-[#071426]/82 to-[#071426]/96"></div>
+  <div class="absolute right-12 bottom-8 w-56 h-56 bg-blue/10 wing-shape rotate-12"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-5 reveal">
+    <p class="text-blue uppercase tracking-[0.34em] text-xs font-bold mb-5">
+      Travel Health Services
+    </p>
+
+    <h1 class="font-display text-white text-5xl md:text-6xl leading-[1.05] mb-6">
+      Travel Vaccinations & Health Advice
+    </h1>
+
+    <p class="text-white/75 text-lg leading-8 max-w-2xl mx-auto">
+      Comprehensive destination-based risk assessment and immunisation delivered through a structured, clinician-led approach.
+    </p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-white border-b border-blue/10">
+  <div class="max-w-7xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="shield-check" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">CQC Registered Clinic</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Clinician-Led Advice</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="syringe" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Travel Vaccinations</p>
+    </div>
+
+    <div class="flex items-center gap-4 reveal-card">
+      <div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+        <i data-lucide="map" class="w-6 h-6"></i>
+      </div>
+      <p class="text-navy text-sm font-bold">Risk Assessment</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Clinically Distinguished Travel Health
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Most people plan their flights before they plan their health.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-5">
+        Travelling may expose risks from food and water-borne infections to mosquito-transmitted diseases and country-specific entry requirements.
+      </p>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        A proper travel consultation helps you understand what protection may be required before departure.
+      </p>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+        Start Your Travel Consultation
+      </a>
+    </div>
+
+    <div class="relative reveal-card">
+      <div class="absolute -top-6 -left-6 w-36 h-36 bg-soft wing-shape"></div>
+      <div class="image-hover relative image-sharp shadow-premium">
+        <img
+          src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=950&q=90"
+          class="w-full h-[500px] object-cover"
+          alt="Travel planning health advice"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION PRICE + RISK ASSESSMENT -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-stretch">
+
+    <div class="reveal bg-soft sharp-card p-8 md:p-12 shadow-premium relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-56 h-56 bg-blue/10 wing-shape"></div>
+
+      <div class="relative">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          What Is a Travel Risk Assessment?
+        </p>
+
+        <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-5">
+          Personalised advice based on your destination and plans.
+        </h2>
+
+        <p class="text-gray-500 leading-8 mb-6">
+          A proper travel consultation is key. We take the time to understand your trip properly, using current Department of Health recommendations to guide every decision.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white p-5 sharp-card">
+            <i data-lucide="map-pinned" class="w-7 h-7 text-blue mb-4"></i>
+            <h3 class="font-bold text-navy mb-2">Destination Review</h3>
+            <p class="text-gray-500 text-sm leading-6">A personalised risk assessment based on your destination and plans.</p>
+          </div>
+
+          <div class="bg-white p-5 sharp-card-alt">
+            <i data-lucide="shield-check" class="w-7 h-7 text-blue mb-4"></i>
+            <h3 class="font-bold text-navy mb-2">Clear Guidance</h3>
+            <p class="text-gray-500 text-sm leading-6">Clear advice on what you need and what you don’t.</p>
+          </div>
+
+          <div class="bg-white p-5 sharp-card-alt">
+            <i data-lucide="bug" class="w-7 h-7 text-blue mb-4"></i>
+            <h3 class="font-bold text-navy mb-2">Malaria Prevention</h3>
+            <p class="text-gray-500 text-sm leading-6">Guidance on malaria prevention and travel health risks.</p>
+          </div>
+
+          <div class="bg-white p-5 sharp-card">
+            <i data-lucide="clipboard-list" class="w-7 h-7 text-blue mb-4"></i>
+            <h3 class="font-bold text-navy mb-2">Vaccination Plan</h3>
+            <p class="text-gray-500 text-sm leading-6">A structured vaccination plan if required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-card bg-navy text-white sharp-card-alt p-8 md:p-12 shadow-premium flex flex-col justify-center">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Travel Consultation
+      </p>
+
+      <div class="mb-8">
+        <p class="font-display text-white text-6xl leading-none">£40</p>
+        <p class="text-white/70 mt-3 leading-7">
+          Travel consultation to check immunisation status and requirements.
+        </p>
+      </div>
+
+      <div class="border-t border-white/10 pt-7 mb-8">
+        <p class="font-display text-white text-4xl leading-none">£25</p>
+        <p class="text-white/70 mt-3 leading-7">
+          If you proceed with vaccination, consultation fee is reduced to £25.
+        </p>
+      </div>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold w-fit">
+        Book Consultation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHO SHOULD BOOK -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Who Should Book?
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        If you're travelling outside the UK, a consultation is strongly recommended.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-5">
+      <div class="reveal-card bg-white sharp-card shadow-premium p-6">
+        <i data-lucide="briefcase-business" class="w-7 h-7 text-blue mb-5"></i>
+        <h3 class="font-bold text-navy mb-3">Frequent Travellers</h3>
+        <p class="text-gray-500 text-sm leading-6">Efficient, repeat-ready protection for business travel.</p>
+      </div>
+
+      <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6">
+        <i data-lucide="mountain" class="w-7 h-7 text-blue mb-5"></i>
+        <h3 class="font-bold text-navy mb-3">Backpackers</h3>
+        <p class="text-gray-500 text-sm leading-6">Rural exposure, long stays and higher-risk environments.</p>
+      </div>
+
+      <div class="reveal-card bg-white sharp-card shadow-premium p-6">
+        <i data-lucide="users-round" class="w-7 h-7 text-blue mb-5"></i>
+        <h3 class="font-bold text-navy mb-3">Families</h3>
+        <p class="text-gray-500 text-sm leading-6">Especially visiting friends and relatives abroad.</p>
+      </div>
+
+      <div class="reveal-card bg-white sharp-card-alt shadow-premium p-6">
+        <i data-lucide="hand-heart" class="w-7 h-7 text-blue mb-5"></i>
+        <h3 class="font-bold text-navy mb-3">Volunteers</h3>
+        <p class="text-gray-500 text-sm leading-6">For areas with limited healthcare access.</p>
+      </div>
+
+      <div class="reveal-card bg-navy text-white sharp-card shadow-premium p-6">
+        <i data-lucide="clock-alert" class="w-7 h-7 text-blue mb-5"></i>
+        <h3 class="font-bold text-white mb-3">Last-Minute Travellers</h3>
+        <p class="text-white/70 text-sm leading-6">Short notice? We can still provide effective advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VACCINATION PRICE LIST -->
+<section class="py-24 bg-white" id="vaccines">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Travel Vaccinations – Price List
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+        Clear vaccine pricing for travel preparation.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mt-5">
+        Vaccine recommendations depend on destination, medical history, previous vaccination status and planned activities.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Cholera Oral (Dukoral)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£30 per dose</p>
+        <p class="text-gray-500 text-sm">2 doses required</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis A & Typhoid</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£75</p>
+        <p class="text-gray-500 text-sm">16+ years</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis A & B Combined</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£75</p>
+        <p class="text-gray-500 text-sm">Adult / Junior</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">DTP</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£30</p>
+        <p class="text-gray-500 text-sm">Diphtheria / Tetanus / Polio</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis B Adult</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£55</p>
+        <p class="text-gray-500 text-sm">Per dose</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis B Junior</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£45</p>
+        <p class="text-gray-500 text-sm">Per dose</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis A Adult</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£45 per dose</p>
+        <p class="text-gray-500 text-sm">2 doses, 10–14 days apart</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Hepatitis A Junior</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£45 per dose</p>
+        <p class="text-gray-500 text-sm">2 doses</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">HPV</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£165</p>
+        <p class="text-gray-500 text-sm">Per dose</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Pneumococcal Vaccine</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£50</p>
+        <p class="text-gray-500 text-sm">Single dose, usually lifelong protection</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Japanese Encephalitis</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£87</p>
+        <p class="text-gray-500 text-sm">Per dose</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Meningitis ACWY</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£50</p>
+        <p class="text-gray-500 text-sm">Menveo / Nimenrix</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Meningitis B (Bexsero)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£139</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">MMR</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£45 per dose</p>
+        <p class="text-gray-500 text-sm">2 doses required</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Rabies (Rabipur)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£60 per dose</p>
+        <p class="text-gray-500 text-sm">3 doses, 10-year protection</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Tick-borne Encephalitis</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£65 per dose</p>
+        <p class="text-gray-500 text-sm">Adult / Junior, 3 doses required</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Typhoid Oral (Vivotif)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£40</p>
+        <p class="text-gray-500 text-sm">3 doses, 3-year protection</p>
+      </div>
+
+      <div class="reveal-card bg-ivory sharp-card-alt shadow-premium p-6">
+        <h3 class="font-bold text-navy mb-2">Typhoid Injection (Typhim VI)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£40</p>
+        <p class="text-gray-500 text-sm">Single dose, 3-year protection</p>
+      </div>
+
+      <div class="reveal-card bg-navy text-white sharp-card shadow-premium p-6">
+        <h3 class="font-bold text-white mb-2">Yellow Fever (Stamaril)</h3>
+        <p class="text-blue font-bold text-2xl mb-2">£85</p>
+        <p class="text-white/70 text-sm">Single dose, lifetime protection</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MALARIA + DESTINATION GUIDANCE -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-[1fr_0.9fr] gap-14 items-center">
+    <div class="reveal">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Malaria & Destination Risks
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Protection beyond vaccines.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-5">
+        Some destinations may require malaria prevention advice. This can include bite avoidance, awareness of risk areas and suitable preventative medication where clinically appropriate.
+      </p>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        Your risk depends on where you are travelling, the length of your stay, activities planned, accommodation type and personal health history.
+      </p>
+
+      <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+        Book Travel Consultation
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 reveal-card">
+      <div class="bg-white p-6 sharp-card shadow-premium">
+        <h3 class="font-display text-navy text-3xl mb-3">Africa</h3>
+        <p class="text-gray-500 leading-7 text-sm">Yellow fever, malaria and typhoid may apply.</p>
+      </div>
+
+      <div class="bg-white p-6 sharp-card-alt shadow-premium">
+        <h3 class="font-display text-navy text-3xl mb-3">Asia</h3>
+        <p class="text-gray-500 leading-7 text-sm">Hepatitis A, typhoid, rabies or Japanese encephalitis may apply.</p>
+      </div>
+
+      <div class="bg-white p-6 sharp-card-alt shadow-premium">
+        <h3 class="font-display text-navy text-3xl mb-3">South America</h3>
+        <p class="text-gray-500 leading-7 text-sm">Yellow fever and malaria advice may be needed.</p>
+      </div>
+
+      <div class="bg-navy p-6 sharp-card text-white shadow-premium">
+        <h3 class="font-display text-white text-3xl mb-3">Hajj & Umrah</h3>
+        <p class="text-white/70 leading-7 text-sm">Meningitis ACWY vaccination requirements and advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal bg-soft sharp-card p-8 md:p-12 shadow-premium">
+      <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Travel Health Resources
+      </p>
+
+      <h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+        Trusted travel health guidance.
+      </h2>
+
+      <p class="text-gray-500 leading-8 mb-8">
+        The following websites are used for up-to-date travel health guidance:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://travelhealthpro.org.uk/" target="_blank" class="bg-white sharp-card p-6 border border-blue/10 hover:shadow-premium transition">
+          <i data-lucide="external-link" class="w-7 h-7 text-blue mb-4"></i>
+          <h3 class="font-bold text-navy mb-2">TravelHealthPro</h3>
+          <p class="text-gray-500 text-sm leading-6">Up-to-date travel health guidance.</p>
+        </a>
+
+        <a href="https://assets.publishing.service.gov.uk/media/6196386dd3bf7f054f43e02d/Greenbook-cover-Nov21.pdf" target="_blank" class="bg-white sharp-card-alt p-6 border border-blue/10 hover:shadow-premium transition">
+          <i data-lucide="external-link" class="w-7 h-7 text-blue mb-4"></i>
+          <h3 class="font-bold text-navy mb-2">The Green Book</h3>
+          <p class="text-gray-500 text-sm leading-6">Department of Health immunisation guidance.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-24 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal bg-navy sharp-card p-10 md:p-14 text-center relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-72 h-72 bg-blue/10 wing-shape"></div>
+
+      <div class="relative max-w-3xl mx-auto">
+        <p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+          Travel Safely
+        </p>
+
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+          Book your travel health consultation today.
+        </h2>
+
+        <p class="text-white/70 leading-8 mb-8">
+          Get destination-based vaccination advice and preventative guidance before you travel.
+        </p>
+
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="https://portal.aestheticnursesoftware.com/book-online/3819" class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+            Book Consultation
+          </a>
+          <a href="https://wa.me/447437346586" class="btn-sharp border border-white/30 text-white px-8 py-4 font-bold hover:border-blue">
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+lucide.createIcons();
+
+if (window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".reveal").forEach((el) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .85,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 86%"
+      }
+    });
+  });
+
+  gsap.utils.toArray(".reveal-card").forEach((el, i) => {
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .75,
+      delay: (i % 4) * .06,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%"
+      }
+    });
+  });
+}
+</script>
+
+</body>
+</html>

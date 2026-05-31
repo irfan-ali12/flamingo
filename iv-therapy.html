@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IV Therapy | Flamingo Medical & Wellness</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+blue: "#2596be",
+navy: "#071426",
+soft: "#eaf8fb",
+ivory: "#FBFFFE"
+},
+fontFamily: {
+body: ["Inter", "sans-serif"],
+display: ["Playfair Display", "serif"]
+},
+boxShadow: {
+premium: "0 24px 70px rgba(7,20,38,0.12)"
+}
+}
+}
+};
+</script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#FBFFFE;
+color:#071426;
+font-family:Inter,sans-serif;
+overflow-x:hidden;
+}
+
+.sharp-card{
+border-radius:36px 36px 36px 10px;
+}
+
+.sharp-card-alt{
+border-radius:10px 36px 36px 36px;
+}
+
+.image-sharp{
+border-radius:46px 46px 46px 12px;
+}
+
+.wing-shape{
+border-radius:110px 16px 110px 16px;
+}
+
+.btn-sharp{
+border-radius:999px 999px 999px 12px;
+transition:.35s ease;
+}
+
+.btn-sharp:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 42px rgba(37,150,190,.28);
+}
+
+.reveal,
+.reveal-card{
+opacity:0;
+transform:translateY(38px);
+}
+
+.image-hover{
+overflow:hidden;
+}
+
+.image-hover img{
+transition:transform .8s ease, filter .8s ease;
+}
+
+.image-hover:hover img{
+transform:scale(1.06);
+filter:contrast(1.05);
+}
+
+.glow{
+filter:blur(90px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="absolute top-0 left-0 w-full z-50">
+
+<div class="max-w-7xl mx-auto px-5 py-6">
+
+<div class="bg-white/95 backdrop-blur-xl shadow-premium sharp-card px-5 py-4 flex items-center justify-between">
+
+<div class="flex items-center gap-3">
+
+<div class="w-12 h-12 bg-blue wing-shape flex items-center justify-center text-white">
+<i data-lucide="activity" class="w-6 h-6"></i>
+</div>
+
+<div>
+<p class="font-bold leading-none text-navy">Flamingo</p>
+<p class="text-blue text-[11px] uppercase tracking-[0.24em] mt-1">
+Medical & Wellness
+</p>
+</div>
+
+</div>
+
+<nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-navy">
+
+<a class="hover:text-blue" href="#">Home</a>
+<a class="hover:text-blue" href="#">Travel Health</a>
+<a class="hover:text-blue" href="#">Skin</a>
+<a class="text-blue" href="#">IV Therapy</a>
+<a class="hover:text-blue" href="#">Aesthetics</a>
+<a class="hover:text-blue" href="#">Ear Care</a>
+
+</nav>
+
+<a href="https://portal.aestheticnursesoftware.com/book-online/3819"
+class="btn-sharp bg-blue text-white px-6 py-3 text-sm font-bold">
+Book Online
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="relative min-h-[56vh] flex items-center justify-center text-center bg-navy overflow-hidden pt-36 pb-20">
+
+<img
+src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=90"
+class="absolute inset-0 w-full h-full object-cover opacity-42"
+alt="IV Therapy"
+/>
+
+<div class="absolute inset-0 bg-gradient-to-b from-[#071426]/70 via-[#071426]/82 to-[#071426]/96"></div>
+
+<div class="absolute right-12 bottom-8 w-56 h-56 bg-blue/10 wing-shape rotate-12"></div>
+
+<div class="relative z-10 max-w-4xl mx-auto px-5 reveal">
+
+<p class="text-blue uppercase tracking-[0.34em] text-xs font-bold mb-5">
+IV Therapy & Wellness
+</p>
+
+<h1 class="font-display text-white text-5xl md:text-6xl leading-[1.05] mb-6">
+Hydration, Recovery & Wellness Support
+</h1>
+
+<p class="text-white/75 text-lg leading-8 max-w-2xl mx-auto">
+Clinician-led IV infusions designed to support hydration, energy, immunity and overall wellbeing.
+</p>
+
+</div>
+
+</section>
+
+<!-- TRUST -->
+
+<section class="bg-white border-b border-blue/10">
+
+<div class="max-w-7xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+<div class="flex items-center gap-4 reveal-card">
+
+<div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+<i data-lucide="shield-check" class="w-6 h-6"></i>
+</div>
+
+<p class="text-navy text-sm font-bold">
+CQC Registered Clinic
+</p>
+
+</div>
+
+<div class="flex items-center gap-4 reveal-card">
+
+<div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+<i data-lucide="droplets" class="w-6 h-6"></i>
+</div>
+
+<p class="text-navy text-sm font-bold">
+IV Hydration Therapy
+</p>
+
+</div>
+
+<div class="flex items-center gap-4 reveal-card">
+
+<div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+<i data-lucide="sparkles" class="w-6 h-6"></i>
+</div>
+
+<p class="text-navy text-sm font-bold">
+Wellness Support
+</p>
+
+</div>
+
+<div class="flex items-center gap-4 reveal-card">
+
+<div class="w-12 h-12 bg-soft wing-shape flex items-center justify-center text-blue">
+<i data-lucide="stethoscope" class="w-6 h-6"></i>
+</div>
+
+<p class="text-navy text-sm font-bold">
+Clinician-Led Care
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INTRO -->
+
+<section class="py-24 bg-ivory overflow-hidden relative">
+
+<div class="absolute top-0 right-0 w-[380px] h-[380px] bg-blue/10 rounded-full glow"></div>
+
+<div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+
+<div class="reveal">
+
+<p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+IV Wellness Treatments
+</p>
+
+<h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+Support your body from within.
+</h2>
+
+<p class="text-gray-500 leading-8 mb-5">
+IV therapy delivers vitamins, fluids and nutrients directly into the bloodstream, allowing fast absorption and efficient hydration support.
+</p>
+
+<p class="text-gray-500 leading-8 mb-8">
+Our IV wellness treatments are designed to support hydration, energy, immunity and recovery through a safe, clinician-led approach.
+</p>
+
+<a href="https://portal.aestheticnursesoftware.com/book-online/3819"
+class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+Book IV Consultation
+</a>
+
+</div>
+
+<div class="relative reveal-card">
+
+<div class="absolute -top-6 -left-6 w-36 h-36 bg-soft wing-shape"></div>
+
+<div class="image-hover relative image-sharp shadow-premium">
+
+<img
+src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=950&q=90"
+class="w-full h-[500px] object-cover"
+alt="IV wellness therapy"
+/>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- IV DRIPS -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-5">
+
+<div class="max-w-3xl mx-auto text-center mb-14 reveal">
+
+<p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+IV Therapy Options
+</p>
+
+<h2 class="font-display text-navy text-4xl md:text-5xl leading-tight">
+Clinician-led IV wellness infusions.
+</h2>
+
+<p class="text-gray-500 leading-8 mt-5">
+Each infusion is designed with specific wellness goals in mind.
+</p>
+
+</div>
+
+<div class="grid lg:grid-cols-2 gap-6">
+
+<!-- AGeless -->
+
+<div class="reveal-card bg-navy text-white sharp-card overflow-hidden shadow-premium">
+
+<div class="image-hover h-[260px]">
+
+<img
+src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=90"
+class="w-full h-full object-cover"
+alt="Ageless Elixir"
+/>
+
+</div>
+
+<div class="p-8">
+
+<div class="flex items-center justify-between gap-5 mb-6">
+
+<div>
+<p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-3">
+Premium Wellness Drip
+</p>
+
+<h3 class="font-display text-white text-4xl">
+Ageless Elixir
+</h3>
+</div>
+
+<div class="text-right">
+<p class="text-blue font-bold text-3xl">£120</p>
+<p class="text-white/60 text-sm mt-1">30 mins</p>
+</div>
+
+</div>
+
+<p class="text-white/70 leading-7 mb-7">
+Designed to support skin glow, recovery and overall wellness support.
+</p>
+
+<div class="flex flex-wrap gap-3">
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Vitamin Support
+</span>
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Hydration
+</span>
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Recovery
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ENERGISER -->
+
+<div class="reveal-card bg-white sharp-card-alt overflow-hidden shadow-premium border border-blue/10">
+
+<div class="image-hover h-[260px]">
+
+<img
+src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=90"
+class="w-full h-full object-cover"
+alt="Energiser Infusion"
+/>
+
+</div>
+
+<div class="p-8">
+
+<div class="flex items-center justify-between gap-5 mb-6">
+
+<div>
+<p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-3">
+Energy Support
+</p>
+
+<h3 class="font-display text-navy text-4xl">
+Energiser Infusion
+</h3>
+</div>
+
+<div class="text-right">
+<p class="text-blue font-bold text-3xl">£110</p>
+<p class="text-gray-500 text-sm mt-1">30 mins</p>
+</div>
+
+</div>
+
+<p class="text-gray-500 leading-7 mb-7">
+Designed to support energy levels, hydration and overall vitality.
+</p>
+
+<div class="flex flex-wrap gap-3">
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Energy
+</span>
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Hydration
+</span>
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Wellness
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HYDROBOOST -->
+
+<div class="reveal-card bg-white sharp-card overflow-hidden shadow-premium border border-blue/10">
+
+<div class="image-hover h-[260px]">
+
+<img
+src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=90"
+class="w-full h-full object-cover"
+alt="Hydrobooster"
+/>
+
+</div>
+
+<div class="p-8">
+
+<div class="flex items-center justify-between gap-5 mb-6">
+
+<div>
+<p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-3">
+Hydration Drip
+</p>
+
+<h3 class="font-display text-navy text-4xl">
+Hydrobooster
+</h3>
+</div>
+
+<div class="text-right">
+<p class="text-blue font-bold text-3xl">£80</p>
+<p class="text-gray-500 text-sm mt-1">30 mins</p>
+</div>
+
+</div>
+
+<p class="text-gray-500 leading-7 mb-7">
+Focused hydration support designed to replenish fluids and support recovery.
+</p>
+
+<div class="flex flex-wrap gap-3">
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Hydration
+</span>
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Recovery
+</span>
+
+<span class="bg-soft px-4 py-2 rounded-full text-sm">
+Wellbeing
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- IMMUNO -->
+
+<div class="reveal-card bg-navy text-white sharp-card-alt overflow-hidden shadow-premium">
+
+<div class="image-hover h-[260px]">
+
+<img
+src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=90"
+class="w-full h-full object-cover"
+alt="Immuno Shield"
+/>
+
+</div>
+
+<div class="p-8">
+
+<div class="flex items-center justify-between gap-5 mb-6">
+
+<div>
+<p class="text-blue uppercase tracking-[0.28em] text-xs font-bold mb-3">
+Immune Support
+</p>
+
+<h3 class="font-display text-white text-4xl">
+Immuno-Shield
+</h3>
+</div>
+
+<div class="text-right">
+<p class="text-blue font-bold text-3xl">£110</p>
+<p class="text-white/60 text-sm mt-1">30 mins</p>
+</div>
+
+</div>
+
+<p class="text-white/70 leading-7 mb-7">
+A wellness infusion designed to support immune health and recovery.
+</p>
+
+<div class="flex flex-wrap gap-3">
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Immune Support
+</span>
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Hydration
+</span>
+
+<span class="bg-white/10 px-4 py-2 rounded-full text-sm">
+Recovery
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY SECTION -->
+
+<section class="py-24 bg-ivory">
+
+<div class="max-w-7xl mx-auto px-5">
+
+<div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
+
+<div class="relative reveal-card">
+
+<div class="absolute -top-6 -left-6 w-36 h-36 bg-soft wing-shape"></div>
+
+<div class="image-hover relative image-sharp shadow-premium">
+
+<img
+src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1000&q=90"
+class="w-full h-[520px] object-cover"
+alt="Wellness IV consultation"
+/>
+
+</div>
+
+</div>
+
+<div class="reveal">
+
+<p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+Why Choose Flamingo?
+</p>
+
+<h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+A safe, clinician-led wellness approach.
+</h2>
+
+<p class="text-gray-500 leading-8 mb-8">
+Every treatment begins with a professional consultation to ensure the infusion is suitable for you and aligned with your health needs.
+</p>
+
+<div class="space-y-5">
+
+<div class="flex gap-5">
+
+<div class="w-14 h-14 bg-white shadow-premium wing-shape flex items-center justify-center text-blue shrink-0">
+<i data-lucide="shield-check"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-navy text-lg mb-2">
+Clinical Safety
+</h3>
+
+<p class="text-gray-500 leading-7">
+All treatments are delivered in a professional clinical setting.
+</p>
+</div>
+
+</div>
+
+<div class="flex gap-5">
+
+<div class="w-14 h-14 bg-white shadow-premium wing-shape flex items-center justify-center text-blue shrink-0">
+<i data-lucide="user-round-check"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-navy text-lg mb-2">
+Personalised Advice
+</h3>
+
+<p class="text-gray-500 leading-7">
+Recommendations are based on your individual wellness goals.
+</p>
+</div>
+
+</div>
+
+<div class="flex gap-5">
+
+<div class="w-14 h-14 bg-white shadow-premium wing-shape flex items-center justify-center text-blue shrink-0">
+<i data-lucide="sparkles"></i>
+</div>
+
+<div>
+<h3 class="font-bold text-navy text-lg mb-2">
+Modern Wellness Support
+</h3>
+
+<p class="text-gray-500 leading-7">
+Designed to support hydration, recovery, vitality and wellbeing.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-start">
+
+<div class="reveal">
+
+<p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+FAQ
+</p>
+
+<h2 class="font-display text-navy text-4xl md:text-5xl leading-tight mb-6">
+IV Therapy questions.
+</h2>
+
+<p class="text-gray-500 leading-8 mb-8">
+Some of the most common questions before booking treatment.
+</p>
+
+<a href="https://portal.aestheticnursesoftware.com/book-online/3819"
+class="btn-sharp bg-blue text-white px-7 py-4 font-bold">
+Book Appointment
+</a>
+
+</div>
+
+<div class="reveal space-y-4">
+
+<details class="bg-ivory p-6 sharp-card shadow-premium" open>
+
+<summary class="cursor-pointer font-bold text-navy">
+How long does IV therapy take?
+</summary>
+
+<p class="text-gray-500 leading-7 mt-4">
+Most treatments take approximately 30 minutes.
+</p>
+
+</details>
+
+<details class="bg-ivory p-6 sharp-card-alt shadow-premium">
+
+<summary class="cursor-pointer font-bold text-navy">
+Do I need a consultation first?
+</summary>
+
+<p class="text-gray-500 leading-7 mt-4">
+Yes. A consultation ensures treatment suitability and safety.
+</p>
+
+</details>
+
+<details class="bg-ivory p-6 sharp-card shadow-premium">
+
+<summary class="cursor-pointer font-bold text-navy">
+What can IV therapy support?
+</summary>
+
+<p class="text-gray-500 leading-7 mt-4">
+Treatments are designed to support hydration, energy, wellness, recovery and immune support.
+</p>
+
+</details>
+
+<details class="bg-ivory p-6 sharp-card-alt shadow-premium">
+
+<summary class="cursor-pointer font-bold text-navy">
+How do I book?
+</summary>
+
+<p class="text-gray-500 leading-7 mt-4">
+You can book online or contact the clinic directly via WhatsApp.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-24 bg-ivory">
+
+<div class="max-w-7xl mx-auto px-5">
+
+<div class="reveal bg-navy sharp-card p-10 md:p-14 text-center relative overflow-hidden">
+
+<div class="absolute right-0 top-0 w-72 h-72 bg-blue/10 wing-shape"></div>
+
+<div class="relative max-w-3xl mx-auto">
+
+<p class="text-blue uppercase tracking-[0.3em] text-xs font-bold mb-4">
+Book Your IV Therapy Session
+</p>
+
+<h2 class="font-display text-white text-4xl md:text-5xl leading-tight mb-6">
+Support your wellness with clinician-led care.
+</h2>
+
+<p class="text-white/70 leading-8 mb-8">
+Hydration, recovery, immunity and wellness support delivered through modern IV therapy treatments.
+</p>
+
+<div class="flex justify-center flex-wrap gap-4">
+
+<a href="https://portal.aestheticnursesoftware.com/book-online/3819"
+class="btn-sharp bg-blue text-white px-8 py-4 font-bold">
+Book Appointment
+</a>
+
+<a href="https://wa.me/447437346586"
+class="btn-sharp border border-white/30 text-white px-8 py-4 font-bold hover:border-blue">
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+lucide.createIcons();
+
+if(window.gsap){
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".reveal").forEach((el)=>{
+
+gsap.to(el,{
+y:0,
+opacity:1,
+duration:.85,
+ease:"power3.out",
+scrollTrigger:{
+trigger:el,
+start:"top 86%"
+}
+})
+
+})
+
+gsap.utils.toArray(".reveal-card").forEach((el,i)=>{
+
+gsap.to(el,{
+y:0,
+opacity:1,
+duration:.75,
+delay:(i % 4)*.06,
+ease:"power3.out",
+scrollTrigger:{
+trigger:el,
+start:"top 90%"
+}
+})
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
